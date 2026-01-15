@@ -3,7 +3,7 @@
 <html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Inicio - Componentes Tech</title>
+<title>Detalle del Producto - ESP32</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -19,25 +19,17 @@
                         "background-dark": "#101622",
                     },
                     fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
+                        "display": ["Space Grotesk"]
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
             },
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 <style>
     body {
@@ -45,200 +37,204 @@
     }
   </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-20">
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-24">
 <!-- Top Navigation Bar -->
-<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
 <div class="flex items-center p-4 justify-between max-w-md mx-auto">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-3xl">memory</span>
-<h1 class="text-lg font-bold tracking-tight">Tech Components</h1>
-</div>
-<div class="flex gap-2">
-<button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-<span class="material-symbols-outlined">shopping_cart</span>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
 </button>
-<button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-<span class="material-symbols-outlined">person</span>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Detalle del Producto</h2>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">share</span>
 </button>
 </div>
 </div>
-</header>
+</div>
 <main class="max-w-md mx-auto">
-<!-- Search Bar Section -->
+<!-- Image Gallery -->
+<div class="px-4 py-3">
+<div class="relative bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm aspect-square flex flex-col justify-end group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Professional high resolution photo of ESP32 WROOM microcontroller chip" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfPQ1sjvhZhxSLa7LI0DbkSda3Dny1-uEIRRXyOjzVpsFD-HSYiCKEZAYgM7_nL4kpDUn5HwDr45im_lJ0Kc2omRkqJGgeDaiA7DP5LwAo1k05a94gVIAtrS12SD5io-2bqmR0cnX3Pge2wrdogRj0qDbJS6fBCyxuSiWhhf9K-QSeoZTCFI4Luvm3ei0uJC5NssGJ_9KJKB-ARD2sNx2ftqiwWBLH4o4xKvFwu13ufsURoojUJ4gbpGJClcH5sK42s6qp1gnYTQ");'>
+</div>
+<!-- Pagination Dots -->
+<div class="relative flex justify-center gap-2 p-5 bg-gradient-to-t from-black/40 to-transparent">
+<div class="size-2 rounded-full bg-primary"></div>
+<div class="size-2 rounded-full bg-white/50"></div>
+<div class="size-2 rounded-full bg-white/50"></div>
+<div class="size-2 rounded-full bg-white/50"></div>
+</div>
+<button class="absolute top-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20">
+<span class="material-symbols-outlined text-white">zoom_in</span>
+</button>
+</div>
+</div>
+<!-- Product Title & Basic Info -->
+<div class="px-4 pt-2">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Microcontroladores</span>
+<h1 class="text-2xl font-bold leading-tight mt-1">ESP32-WROOM-32D Development Board</h1>
+</div>
+<div class="bg-emerald-500/10 text-emerald-500 px-2 py-1 rounded text-xs font-bold whitespace-nowrap">
+                    EN STOCK
+                </div>
+</div>
+<div class="flex items-center gap-4 mt-3">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary fill-1 text-lg">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-slate-500 text-sm">(124 reseñas)</span>
+</div>
+<div class="h-4 w-px bg-slate-300 dark:bg-slate-700"></div>
+<p class="text-slate-500 text-sm italic font-medium">SKU: ESP-32-0042</p>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="text-3xl font-black text-primary">8,50 €</span>
+<span class="text-slate-500 text-sm font-normal">IVA incluido</span>
+</div>
+</div>
+<!-- Description -->
 <div class="px-4 py-4">
-<label class="flex flex-col w-full">
-<div class="flex w-full items-stretch rounded-xl h-12 bg-white dark:bg-[#192233] border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
-<div class="flex items-center justify-center pl-4 text-slate-400">
-<span class="material-symbols-outlined">search</span>
+<p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+                Potente microcontrolador Dual-Core con WiFi y Bluetooth integrado. Diseñado para aplicaciones de IoT de bajo consumo y prototipado rápido de nivel profesional.
+            </p>
 </div>
-<input class="flex-1 bg-transparent border-none focus:ring-0 text-base placeholder:text-slate-400 px-3" placeholder="Buscar SKU, ESP32, Sensores..."/>
-<button class="flex items-center justify-center px-4 text-primary">
-<span class="material-symbols-outlined">qr_code_scanner</span>
+<!-- Action: Download Datasheet -->
+<div class="px-4 py-2">
+<button class="w-full flex items-center justify-between p-4 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">picture_as_pdf</span>
+<div class="text-left">
+<p class="font-bold text-sm">Download Datasheet</p>
+<p class="text-xs text-slate-500">PDF (2.4 MB) • Rev. 2023</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">download</span>
 </button>
 </div>
-</label>
+<!-- Technical Specifications Table -->
+<div class="mt-6 px-4">
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+                Especificaciones Técnicas
+            </h3>
+<div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-2 bg-slate-50 dark:bg-slate-800/30 p-3 border-b border-slate-200 dark:border-slate-800">
+<span class="text-sm text-slate-500">Voltaje Operativo</span>
+<span class="text-sm font-mono font-medium">2.2V - 3.6V</span>
 </div>
-<!-- Promo Carousel -->
-<div class="flex overflow-x-auto snap-x snap-mandatory [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden px-4 gap-4">
-<div class="snap-center shrink-0 w-full">
-<div class="relative h-44 w-full rounded-xl overflow-hidden bg-primary/10 border border-primary/20">
-<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent z-10"></div>
-<div class="absolute inset-0 w-full h-full bg-center bg-cover" data-alt="Blue electronic circuit pattern background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPULtnWvyZlrZ8RvFwtqLgv4aMI9X089yeMjnlvWXLDk2RHwIhAqpAvsXs4DcX8QQwmFtJxu1rHMC4BynQeXEIlRcmsbU8Gs2kZsWU_QNmFt7McFNKPTXdDjd1Mzb4lfEpdZZCM5icJkxfXNI4InvfcoWqbEooZEuMrTsXUVeMtkcZ3uipOH4fSLr75rivhERO6_ENnOqWDnLmpyUwmpg1Vq7a4i6jEKZJKSYfeEuZqvPTliN3eSTlXKjGcyxQDB1vd-VHfvNnxg");'></div>
-<div class="relative z-20 p-6 h-full flex flex-col justify-center max-w-[60%]">
-<span class="text-xs font-bold uppercase tracking-widest text-white/80 mb-1">Oferta Especial</span>
-<h2 class="text-xl font-bold text-white leading-tight mb-2">Arduino Starter Kits</h2>
-<p class="text-white/90 text-sm mb-4">Todo para empezar tu proyecto. 20% OFF.</p>
-<button class="bg-white text-primary text-sm font-bold py-2 px-4 rounded-lg w-fit">Ver Kits</button>
+<div class="grid grid-cols-2 p-3 border-b border-slate-200 dark:border-slate-800">
+<span class="text-sm text-slate-500">Flash Memory</span>
+<span class="text-sm font-mono font-medium">4 MB</span>
 </div>
+<div class="grid grid-cols-2 bg-slate-50 dark:bg-slate-800/30 p-3 border-b border-slate-200 dark:border-slate-800">
+<span class="text-sm text-slate-500">Procesador</span>
+<span class="text-sm font-mono font-medium">Dual-Core 240MHz</span>
 </div>
+<div class="grid grid-cols-2 p-3 border-b border-slate-200 dark:border-slate-800">
+<span class="text-sm text-slate-500">GPIO Pins</span>
+<span class="text-sm font-mono font-medium">32 Pines</span>
 </div>
-<!-- Second slide (peeking) -->
-<div class="snap-center shrink-0 w-full">
-<div class="relative h-44 w-full rounded-xl overflow-hidden bg-slate-800">
-<div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
-<div class="absolute inset-0 w-full h-full bg-center bg-cover" data-alt="Abstract hardware tech components background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDipLPh8HEx2TTNGe9iztEd6AkBkiEayFO09XuL78wMqsAT6-1jiAo_Nkiq9hUSWqaBS6RjxFCcp9X5wQVmPGaYEaA-qq2Foe7zQTLNUGyQ-lGtTDrqftWOw07D1hzzeF45j_xIHYA3kbjVH6f4tS9uUpqMwG9BVdu8VkhOyHm8ZLCI2-0gYmPdvobJ44vq3nG2w6dM3w4DypIngPcwm-1o84uHhyoLBb35FgsT7JDvQb03-MjN21xMkm2Y9kk_lheKM_WJEFPkHw");'></div>
-<div class="relative z-20 p-6 h-full flex flex-col justify-center">
-<h2 class="text-xl font-bold text-white leading-tight mb-2">Raspberry Pi 5</h2>
-<p class="text-white/90 text-sm mb-4">Stock limitado disponible hoy.</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Technical Categories Grid -->
-<div class="px-4 py-6">
-<h3 class="text-base font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Categorías Técnicas</h3>
-<div class="grid grid-cols-4 gap-3">
-<div class="flex flex-col items-center gap-2 group">
-<div class="size-14 rounded-xl bg-white dark:bg-[#192233] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-2xl">computer</span>
-</div>
-<span class="text-xs font-medium text-center leading-tight">Micro</span>
-</div>
-<div class="flex flex-col items-center gap-2 group">
-<div class="size-14 rounded-xl bg-white dark:bg-[#192233] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-2xl">sensors</span>
-</div>
-<span class="text-xs font-medium text-center leading-tight">Sensores</span>
-</div>
-<div class="flex flex-col items-center gap-2 group">
-<div class="size-14 rounded-xl bg-white dark:bg-[#192233] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-2xl">bolt</span>
-</div>
-<span class="text-xs font-medium text-center leading-tight">Fuentes</span>
-</div>
-<div class="flex flex-col items-center gap-2 group">
-<div class="size-14 rounded-xl bg-white dark:bg-[#192233] border border-slate-200 dark:border-slate-800 flex items-center justify-center text-primary group-active:scale-95 transition-transform">
-<span class="material-symbols-outlined text-2xl">build</span>
-</div>
-<span class="text-xs font-medium text-center leading-tight">Tools</span>
+<div class="grid grid-cols-2 bg-slate-50 dark:bg-slate-800/30 p-3">
+<span class="text-sm text-slate-500">Conectividad</span>
+<span class="text-sm font-mono font-medium">WiFi / BT / BLE</span>
 </div>
 </div>
 </div>
-<!-- New Arrivals Section -->
-<section class="px-4 pb-6">
-<div class="flex items-center justify-between mb-4">
-<h3 class="text-lg font-bold">Novedades</h3>
-<a class="text-primary text-sm font-semibold" href="#">Ver Todo</a>
+<!-- Frequently Bought Together -->
+<div class="mt-10">
+<div class="px-4 flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold">Comprado frecuentemente</h3>
+<span class="text-primary text-sm font-bold">Ver todo</span>
 </div>
-<div class="grid grid-cols-2 gap-4">
+<div class="flex overflow-x-auto gap-4 px-4 pb-6 no-scrollbar">
 <!-- Product Card 1 -->
-<div class="bg-white dark:bg-[#192233] rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">     
-<div class="relative aspect-square bg-slate-50 dark:bg-slate-900/50 p-4">
-<img class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal opacity-90" data-alt="ESP32 Microcontroller chip on table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBYOGkOIBSMIYqXHPrB6hG2e8IF2nHF5kxtLBKf3_y2Y3EQ9Jn8flkHLTMDJHHXcVbbqoChdtxcxrYXiGZ28ma1KGG_Y7Gb4vScpOUbLzJBVf7eHo8_8sln6PEO3Qa4Kbj-3hwzD57S7zCro0XF2MUmv9mBBAQRoU8z9y9G65rm_OTxg9t2P59pW9R1v6j7eBO5lgqcFEve1kI-jRjGDNowga1c1NUzS1AH6iSmIrgMBqDJvo6xZrEkp_ajZSJUJEM3BIdkWOXNQ"/>
-<button class="absolute bottom-2 right-2 size-8 bg-primary text-white rounded-lg flex items-center justify-center shadow-lg active:scale-90 transition-transform">
-<span class="material-symbols-outlined text-xl">add</span>
+<div class="min-w-[160px] bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="h-28 rounded-lg bg-slate-100 dark:bg-slate-800 mb-2 overflow-hidden bg-cover bg-center" data-alt="Breadboard for electronic prototyping" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiqedHMoTloTstfiPbV8PQdAqVTc7g2DRtsMIFUIiezq_nKuL7yTZcKwZene9DIjvVAVtF7u1iRH83ODagYEKttk9YK9ZYhOgiwmMP48xk-SRsRlwoJUds0Yl7DnzvEz05W5FKJd79M8FehkisPFav8bmE4hrSLH1WqE5gYUEc3psQtVju3sDsXcrtffVJlIi1IRd-mRqBErN4DY2G9mXubnTZtBtO-2bCUj3xCsCMimRmeQMxjAkQHHEyXk_tySTRStiCqLaMyA');">
+</div>
+<p class="text-xs font-bold line-clamp-2 mb-1">Protoboard 830 puntos</p>
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold">3,20 €</span>
+<button class="bg-primary size-7 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">add</span>
 </button>
-</div>
-<div class="p-3">
-<p class="text-[10px] text-slate-500 font-mono mb-1">SKU: ESP32-WROOM</p>
-<h4 class="text-sm font-bold leading-tight line-clamp-2 mb-2">ESP32-WROOM-32U WiFi + BT SoC</h4>
-<div class="flex items-baseline gap-1">
-<span class="text-base font-bold">$12.50</span>
-<span class="text-[10px] text-slate-400">USD</span>
-</div>
 </div>
 </div>
 <!-- Product Card 2 -->
-<div class="bg-white dark:bg-[#192233] rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
-<div class="relative aspect-square bg-slate-50 dark:bg-slate-900/50 p-4">
-<img class="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal opacity-90" data-alt="Multimeter electronic testing tool" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQilCTdoetepWnZuL_gIP-YAoza1GocnpxLPIsHY4lwKxLoRJpWJ8yPzb4KTXcrJ-C9t3lHRkRdBm4SIPOFVTd2pfcv4Imtrto3JxEJ9FMvRHs3Z3F97WlyxnnsWixON4GPFwx2PvuJPPncmeY4iaWiY9X_G0T8Zq6kAK0rkUayPyOKeXjqaLmhlYa3i0NRiKNMVVNwxnMx88bWDM5qUubim22lhEqwTpvq4fwux2sKzOfL4_vjyCXuKfBdN0Jk_tBNaMi97Uw5g"/>
-<button class="absolute bottom-2 right-2 size-8 bg-primary text-white rounded-lg flex items-center justify-center shadow-lg active:scale-90 transition-transform">
-<span class="material-symbols-outlined text-xl">add</span>
-</button>
+<div class="min-w-[160px] bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="h-28 rounded-lg bg-slate-100 dark:bg-slate-800 mb-2 overflow-hidden bg-cover bg-center" data-alt="Jumper wires set for electronics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDf6PxwIWgJHvoYJCR9kX4uaz7JzpXOabCNt5uiWMpKWozdZeBe-nT7XZeF1d6cfpOSwPzZL3xld5LuUYempcv-LsZiEDRUAs0ui5FN5tPn-SLyielPBSF2t4ELWj7IolyvSS-pr4zIUBmdDjMKDC9Pygy6VdThDg350Nh6_ZFjv69cnqHSbd2-Ra9hFpHFr1_Ce7LQfhMpj3KO6MvQTEug7tB9oM7D8I4353YJByfPyqT-Moic4Z0XzOSkkzllJnfCbzv7yuwOPA');">
 </div>
-<div class="p-3">
-<p class="text-[10px] text-slate-500 font-mono mb-1">SKU: AN-8008</p>
-<h4 class="text-sm font-bold leading-tight line-clamp-2 mb-2">Multímetro Digital Auto-Rango Pro</h4>
-<div class="flex items-baseline gap-1">
-<span class="text-base font-bold">$45.99</span>
-<span class="text-[10px] text-slate-400">USD</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Best Sellers Section -->
-<section class="px-4 pb-12">
-<div class="flex items-center justify-between mb-4">
-<h3 class="text-lg font-bold">Más Vendidos</h3>
-</div>
-<div class="flex flex-col gap-3">
-<div class="bg-white dark:bg-[#192233] rounded-xl p-3 border border-slate-200 dark:border-slate-800 flex items-center gap-4">
-<div class="size-20 rounded-lg bg-slate-50 dark:bg-slate-900/50 p-2 shrink-0">
-<img class="w-full h-full object-contain" data-alt="Soldering iron station" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALl95sIAWEbnWmGe50wisfTDl9Qaef7ivQ7aB4oqmc0oMWXeoUcOD9uYwuaqYmkz7vBDEsoTHZizF12oJXrkKyV0Omo-6sZOJ2d4v6YcB5hNJDtV9UFIIb0TnnskVcF-UBK8dCobq4AY4bzf2_RdGMswCw87I2CKzlLam8KnrY92RVEkLtTpXZUozqOqv_yu-z_7ecBsry4qhCldwQZnC9_ZNvJiqx8dQEpxjI-IhExLZgXvVFWktg7uG6ObAdpWPJaS0lRtgr4A"/>
-</div>
-<div class="flex-1">
-<h4 class="text-sm font-bold mb-1 line-clamp-1">Estación de Soldado T12-D</h4>
-<p class="text-[10px] text-slate-500 mb-2">Puntas intercambiables • 75W</p>
-<div class="flex items-center justify-between">
-<span class="font-bold">$89.00</span>
-<span class="text-[10px] bg-green-500/10 text-green-500 px-2 py-0.5 rounded font-bold uppercase tracking-tight">En Stock</span>
-</div>
-</div>
-<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined">add_shopping_cart</span>
-</button>
-</div>
-<div class="bg-white dark:bg-[#192233] rounded-xl p-3 border border-slate-200 dark:border-slate-800 flex items-center gap-4">
-<div class="size-20 rounded-lg bg-slate-50 dark:bg-slate-900/50 p-2 shrink-0">
-<img class="w-full h-full object-contain" data-alt="Various electronic capacitors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2CP5iYnP_kWW2g-sXN0W6UWbXOYG1Rjo_him9_K_3pSQ56fRbvFeek2mreajzD71T-uVY169osSDeVghrVKGntF-iKkVXPyaQep_D12d3RstVDzbar65DERHNJmr_1GBr46peudoG54yjgAKScmhh6XyYjv_M56sffqwfztVkwzNfvm4yltt54a1eTs_T7BWUfGnB2nB3K04pGNUaNsdTMyowsLoNPwT1HDW-UCRf3QambF2xuxszo6959GJ3aa6gl4hbvipWcw"/>
-</div>
-<div class="flex-1">
-<h4 class="text-sm font-bold mb-1 line-clamp-1">Kit 500 Capacitores Cerámicos</h4>
-<p class="text-[10px] text-slate-500 mb-2">24 valores • Estuche plástico</p>
-<div class="flex items-center justify-between">
-<span class="font-bold">$14.20</span>
-<span class="text-[10px] bg-orange-500/10 text-orange-500 px-2 py-0.5 rounded font-bold uppercase tracking-tight">Últimas 5</span>
-</div>
-</div>
-<button class="size-10 bg-primary/10 text-primary rounded-full flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined">add_shopping_cart</span>
+<p class="text-xs font-bold line-clamp-2 mb-1">Cables Jumper M-M (40u)</p>
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold">1,80 €</span>
+<button class="bg-primary size-7 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">add</span>
 </button>
 </div>
 </div>
-</section>
+<!-- Product Card 3 -->
+<div class="min-w-[160px] bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="h-28 rounded-lg bg-slate-100 dark:bg-slate-800 mb-2 overflow-hidden bg-cover bg-center" data-alt="Micro USB cable for power and data" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAofvPb0anH4uNvBaAN1Xf0L_hA-1LJYfNonq8Hvn29RCNq5LWa8MOxfbsz6a3y13BLAQ8ffh5BHq6TRAhTekuhP_kPgE889uMEenaawbox8cPtnusDmoie_wKlT0vwsL2osRusdfkU0tgPNBL2QBZ6FCsmpMEh5UWSJno_8UBosOGwTkmo8QAjmAHNV7PQoVef9uKGWlobXVtWx_PRqtQ98ekJ1k_E89HeDZm9dt_MuLT2WP2n3v9-WoLqAbtymbrkeHmuOEaHfw');">
+</div>
+<p class="text-xs font-bold line-clamp-2 mb-1">Cable Micro USB 1m</p>
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold">2,50 €</span>
+<button class="bg-primary size-7 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviews Summary -->
+<div class="px-4 pb-12">
+<h3 class="text-lg font-bold mb-4">Valoraciones</h3>
+<div class="flex flex-wrap gap-x-8 gap-y-6">
+<div class="flex flex-col gap-2">
+<p class="text-4xl font-black leading-tight tracking-tight">4.8</p>
+<div class="flex gap-0.5 text-primary">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-500 text-sm">Basado en 124 opiniones</p>
+</div>
+<div class="grid min-w-[200px] flex-1 grid-cols-[20px_1fr_40px] items-center gap-y-2">
+<p class="text-sm font-normal">5</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"><div class="rounded-full bg-primary" style="width: 80%;"></div></div>
+<p class="text-slate-500 text-xs text-right">80%</p>
+<p class="text-sm font-normal">4</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"><div class="rounded-full bg-primary" style="width: 12%;"></div></div>
+<p class="text-slate-500 text-xs text-right">12%</p>
+<p class="text-sm font-normal">3</p>
+<div class="flex h-1.5 flex-1 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"><div class="rounded-full bg-primary" style="width: 5%;"></div></div>
+<p class="text-slate-500 text-xs text-right">5%</p>
+</div>
+</div>
+</div>
 </main>
-<!-- Bottom Navigation Bar (iOS Style) -->
-<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 pb-safe pb-4 pt-2 z-50">
-<div class="max-w-md mx-auto flex justify-around items-center">
-<button class="flex flex-col items-center gap-1 text-primary">
-<span class="material-symbols-outlined fill-[1]">home</span>
-<span class="text-[10px] font-bold">Inicio</span>
+<!-- Sticky Footer CTA -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-4 py-4 safe-area-bottom">
+<div class="max-w-md mx-auto flex gap-4 items-center">
+<!-- Quantity Selector -->
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
+<button class="size-9 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">remove</span>
 </button>
-<button class="flex flex-col items-center gap-1 text-slate-400">
-<span class="material-symbols-outlined">category</span>
-<span class="text-[10px] font-medium">Categorías</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-slate-400">
-<div class="relative">
-<span class="material-symbols-outlined">shopping_bag</span>
-</div>
-<span class="text-[10px] font-medium">Carrito</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-slate-400">
-<span class="material-symbols-outlined">bookmark</span>
-<span class="text-[10px] font-medium">Deseos</span>
+<span class="w-8 text-center font-bold text-sm">1</span>
+<button class="size-9 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">add</span>
 </button>
 </div>
-</nav>
+<!-- Add to Cart -->
+<button class="flex-1 bg-primary text-white font-bold h-12 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Añadir al Carrito
+            </button>
+</div>
+</div>
 </body></html>
