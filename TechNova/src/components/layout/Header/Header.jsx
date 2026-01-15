@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { ThemeToggle } from "../../ThemeToggle/ThemeToggle.jsx";
 
 export const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -10,8 +11,8 @@ export const Header = () => {
         {/* Fila principal */}
         <div className="flex items-center justify-between gap-3">
           {/* Logo y título */}
-          <a 
-            href="/" 
+          <a
+            href="/"
             className="flex items-center gap-3 hover:opacity-80 transition-opacity group"
           >
             <span className="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">
@@ -24,7 +25,7 @@ export const Header = () => {
 
           {/* Botones de acción */}
           <div className="flex gap-2">
-            <button 
+            <button
               onClick={() => setIsSearchOpen(!isSearchOpen)}
               aria-label="Buscar productos"
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95"
@@ -32,19 +33,23 @@ export const Header = () => {
               <span className="material-symbols-outlined text-xl">search</span>
             </button>
 
-            <button 
+            <button
               aria-label="Carrito de compras"
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95 relative"
             >
-              <span className="material-symbols-outlined text-xl">shopping_cart</span>
+              <span className="material-symbols-outlined text-xl">
+                shopping_cart
+              </span>
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {cartCount}
                 </span>
               )}
             </button>
-            
-            <button 
+
+            <ThemeToggle />
+
+            <button
               aria-label="Perfil de usuario"
               className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors active:scale-95"
             >
@@ -57,7 +62,7 @@ export const Header = () => {
         {isSearchOpen && (
           <div className="flex items-center gap-2 animate-in slide-in-from-top duration-200">
             <div className="flex-1 relative">
-              <input 
+              <input
                 type="search"
                 placeholder="Buscar componentes..."
                 autoFocus
@@ -67,7 +72,7 @@ export const Header = () => {
                 search
               </span>
             </div>
-            <button 
+            <button
               onClick={() => setIsSearchOpen(false)}
               className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
             >

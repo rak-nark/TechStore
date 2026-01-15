@@ -22,7 +22,7 @@ export const PromoCarousel = () => {
             <p className="text-white/90 text-sm mb-4">
               Todo para empezar tu proyecto. 20% OFF.
             </p>
-            <button className="bg-white text-primary text-sm font-bold py-2 px-4 rounded-lg w-fit">
+            <button className="bg-white hover:bg-slate-100 dark:bg-primary dark:hover:bg-blue-600 text-black dark:text-black text-sm font-bold py-2 px-4 rounded-lg w-fit transition-colors">
               Ver Kits
             </button>
           </div>

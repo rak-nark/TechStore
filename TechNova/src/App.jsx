@@ -1,29 +1,8 @@
-import { Header } from "./components/layout/Header/Header.jsx";
-import { SearchBar } from "./components/ui/SearchBar.jsx";
-import { PromoCarousel } from "./components/PromoCarousel.jsx";
-import { CategoriesGrid } from "./components/CategoriesGrid.jsx";
-import { NewArrivals } from "./components/NewArrivals.jsx";
-import { BestSellers } from "./components/BottomNavigation.jsx";
-import { BottomNavigation } from "./components/BottomNav.jsx";
-import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle.jsx";
+import HomeDesktop from "./pages/HomeDesktop.jsx";
 import "./App.css";
 
 export const App = () => {
-  return (
-    <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-20">
-      <Header />
-
-      <main className="max-w-md mx-auto">
-        <SearchBar />
-        <PromoCarousel />
-        <CategoriesGrid />
-        <NewArrivals />
-        <BestSellers />
-      </main>
-
-      <BottomNavigation />
-    </div>
-  );
+  return <HomeDesktop />;
 };
 
 export default App;
