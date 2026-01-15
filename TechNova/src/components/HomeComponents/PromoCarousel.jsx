@@ -9,7 +9,7 @@ export const PromoCarousel = () => {
             className="absolute inset-0 w-full h-full bg-center bg-cover"
             style={{
               backgroundImage:
-                'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPULtnWvyZlrZ8RvFwtqLgv4aMI9X089yeMjnlvWXLDk2RHwIhAqpAvsXs4DcX8QQwmFtJxu1rHMC4BynQeXEIlRcmsbU8Gs2kZsWU_QNmFt7McFNKPTXdDjd1Mzb4lfEpdZZCM5icJkxfXNI4InvfcoWqbEooZEuMrTsXUVeMtkcZ3uipOH4fSLr75rivhERO6_ENnOqWDnLmpyUwmpg1Vq7a4i6jEKZJKSYfeEuZqvPTliN3eSTlXKjGcyxQDB1vd-VHfvNnxg")',
+                'url("/images/carousel/CEL-POCO-X7-256-8-NEGRO-front-negro-01.webp")',
             }}
           ></div>
           <div className="relative z-20 p-6 h-full flex flex-col justify-center max-w-[60%]">
@@ -17,13 +17,13 @@ export const PromoCarousel = () => {
               Oferta Especial
             </span>
             <h2 className="text-xl font-bold text-white leading-tight mb-2">
-              Arduino Starter Kits
+              Poco X7 Gaming
             </h2>
             <p className="text-white/90 text-sm mb-4">
-              Todo para empezar tu proyecto. 20% OFF.
+              El smartphone perfecto para gamers. 15% OFF.
             </p>
             <button className="bg-white hover:bg-slate-100 dark:bg-primary dark:hover:bg-blue-600 text-black dark:text-black text-sm font-bold py-2 px-4 rounded-lg w-fit transition-colors">
-              Ver Kits
+              Ver Producto
             </button>
           </div>
         </div>
@@ -37,15 +37,15 @@ export const PromoCarousel = () => {
             className="absolute inset-0 w-full h-full bg-center bg-cover"
             style={{
               backgroundImage:
-                'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDipLPh8HEx2TTNGe9iztEd6AkBkiEayFO09XuL78wMqsAT6-1jiAo_Nkiq9hUSWqaBS6RjxFCcp9X5wQVmPGaYEaA-qq2Foe7zQTLNUGyQ-lGtTDrqftWOw07D1hzzeF45j_xIHYA3kbjVH6f4tS9uUpqMwG9BVdu8VkhOyHm8ZLCI2-0gYmPdvobJ44vq3nG2w6dM3w4DypIngPcwm-1o84uHhyoLBb35FgsT7JDvQb03-MjN21xMkm2Y9kk_lheKM_WJEFPkHw")',
+                'url("/images/carousel/MON-ASUS-26.5-240HZ-QHD-front-negro-01.webp")',
             }}
           ></div>
           <div className="relative z-20 p-6 h-full flex flex-col justify-center">
             <h2 className="text-xl font-bold text-white leading-tight mb-2">
-              Raspberry Pi 5
+              Monitor ASUS 240Hz
             </h2>
             <p className="text-white/90 text-sm mb-4">
-              Stock limitado disponible hoy.
+              Experiencia gaming premium. Stock limitado.
             </p>
           </div>
         </div>

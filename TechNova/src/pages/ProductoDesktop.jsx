@@ -1,10 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Header } from "../components/layout/Header/Header.jsx";
-import { ProductGallery } from "../components/ProductGallery.jsx";
-import { TechnicalSpecifications } from "../components/TechnicalSpecifications.jsx";
-import { RelatedProducts } from "../components/RelatedProducts.jsx";
-import { RatingSummary } from "../components/RatingSummary.jsx";
+import { ProductGallery } from "../components/ProductoDetailsComponents/ProductGallery.jsx";
+import { TechnicalSpecifications } from "../components/ProductoDetailsComponents/TechnicalSpecifications.jsx";
+import { RelatedProducts } from "../components/ProductoDetailsComponents/RelatedProducts.jsx";
+import { RatingSummary } from "../components/ProductoDetailsComponents/RatingSummary.jsx";
 
 const PRODUCT_DATA = {
   1: {
@@ -293,13 +292,12 @@ export const ProductoDesktop = () => {
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-24">
-      {/* Header */}
-      <div className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+      {/* Top Navigation Bar */}
+      <div className="sticky top-16 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <div className="flex items-center p-4 justify-between max-w-md mx-auto">
           <button
             onClick={handleBack}
             className="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-            aria-label="Volver"
           >
             <span className="material-symbols-outlined text-2xl">
               arrow_back_ios_new
@@ -406,22 +404,28 @@ export const ProductoDesktop = () => {
       </main>
 
       {/* Sticky Footer - Quantity & Add to Cart */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-4 py-4">
+      <div 
+        className="fixed bottom-0 left-0 right-0 z-50 backdrop-blur-xl border-t px-4 py-4"
+        style={{
+          backgroundColor: "var(--nav-bg)",
+          borderTopColor: "var(--nav-border)",
+        }}
+      >
         <div className="max-w-md mx-auto flex gap-4 items-center">
           {/* Quantity Selector */}
           <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg p-1 border border-slate-200 dark:border-slate-700">
             <button
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="size-9 flex items-center justify-center text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="size-9 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               <span className="material-symbols-outlined">remove</span>
             </button>
-            <span className="w-8 text-center font-bold text-sm">
+            <span className="w-8 text-center font-bold text-sm text-slate-900 dark:text-white">
               {quantity}
             </span>
             <button
               onClick={() => setQuantity(quantity + 1)}
-              className="size-9 flex items-center justify-center text-primary hover:text-blue-600 transition-colors"
+              className="size-9 flex items-center justify-center text-primary hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
               <span className="material-symbols-outlined">add</span>
             </button>

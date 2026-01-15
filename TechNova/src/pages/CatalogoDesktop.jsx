@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Header } from "../components/layout/Header/Header.jsx";
-import { BottomNavigation } from "../components/BottomNav.jsx";
-import { CatalogSearchBar } from "../components/CatalogSearchBar.jsx";
-import { CategoryChips } from "../components/CategoryChips.jsx";
-import { CatalogProductItem } from "../components/ui/CatalogProductItem.jsx";
+import { BottomNavigation } from "../components/CatalogoComponents/BottomNavigation.jsx";
+import { CatalogSearchBar } from "../components/CatalogoComponents/CatalogSearchBar.jsx";
+import { CategoryChips } from "../components/CatalogoComponents/CategoryChips.jsx";
+import { CatalogProductItem } from "../components/CatalogoComponents/CatalogProductItem.jsx";
 
 const CATALOG_PRODUCTS = [
   {
@@ -84,9 +83,7 @@ export const CatalogoDesktop = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-24">
       {/* Header del Catálogo */}
-      <header className="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <Header />
-
+      <header className="sticky top-16 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         {/* Search Bar */}
         <CatalogSearchBar onSearch={setSearchTerm} />
 

@@ -1,4 +1,4 @@
-import { CategoryIcon } from "./ui/CategoryIcon";
+import { CategoryIcon } from "./CategoryIcon";
 
 export const CategoriesGrid = () => {
   const categories = [
