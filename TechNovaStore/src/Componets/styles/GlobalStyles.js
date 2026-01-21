@@ -9,7 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    color: #ffffff;
-    background-color: #101622;
+    color: ${({ theme }) => theme.colors.textPrimary};
+    background-color: ${({ theme }) => theme.colors.background};
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 `;
