@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   HeaderWrapper,
   HeaderContainer,
@@ -27,17 +28,41 @@ export default function Header({
   const theme = useTheme();
 
   const isDark = theme.colors.background === "#101622";
+
+  const categoryRoutes = {
+    Laptops: "/catalog/laptops",
+    Phones: "/catalog/phones",
+    Audio: "/catalog/audio",
+    Accessories: "/catalog/accessories",
+  };
+
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <LogoSection>
-          <LogoBox>⚡</LogoBox>
-          <Brand>TechStore</Brand>
+          <Link
+            to="/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.75rem",
+              textDecoration: "none",
+            }}
+          >
+            <LogoBox>⚡</LogoBox>
+            <Brand>TechStore</Brand>
+          </Link>
         </LogoSection>
 
         <Nav>
           {navItems.map((item) => (
-            <NavItem key={item}>{item}</NavItem>
+            <NavItem
+              key={item}
+              as={Link}
+              to={categoryRoutes[item] || "/catalog"}
+            >
+              {item}
+            </NavItem>
           ))}
         </Nav>
 

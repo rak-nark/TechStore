@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   CategoriesSection,
   HeaderContainer,
@@ -23,39 +24,50 @@ const defaultCategories = [
     name: "Laptops",
     icon: MdLaptopMac,
     productCount: "120+",
+    route: "/catalog/laptops",
   },
   {
     id: 2,
     name: "Phones",
     icon: MdSmartphone,
     productCount: "85+",
+    route: "/catalog/phones",
   },
   {
     id: 3,
     name: "Audio",
     icon: MdHeadphones,
     productCount: "200+",
+    route: "/catalog/audio",
   },
   {
     id: 4,
     name: "Gaming",
     icon: MdSportsEsports,
     productCount: "50+",
+    route: "/catalog/gaming",
   },
 ];
 
 export const Categories = ({
   title = "Featured Categories",
-  viewAllLink = "#",
+  viewAllLink = "/catalog",
   categories = defaultCategories,
   onCategoryClick = () => {},
   onViewAllClick = () => {},
 }) => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    navigate(category.route);
+    onCategoryClick(category);
+  };
+
   return (
     <CategoriesSection>
       <HeaderContainer>
         <Title>{title}</Title>
-        <ViewAllLink href={viewAllLink} onClick={onViewAllClick}>
+        <ViewAllLink as={Link} to={viewAllLink} onClick={onViewAllClick}>
           View All
         </ViewAllLink>
       </HeaderContainer>
@@ -66,7 +78,7 @@ export const Categories = ({
           return (
             <CategoryCard
               key={category.id}
-              onClick={() => onCategoryClick(category)}
+              onClick={() => handleCategoryClick(category)}
             >
               <IconContainer>
                 <IconComponent size={32} />

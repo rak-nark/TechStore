@@ -3,7 +3,6 @@ import { Card } from "../Componets/layout/Card/Card";
 import Categories from "../Componets/layout/Categories/Categories";
 import BestSellers from "../Componets/layout/BestSellers/BestSellers";
 import PromotionalBanner from "../Componets/layout/PromotionalBanner/PromotionalBanner";
-import Newsletter from "../Componets/layout/Newsletter/Newsletter";
 import { Main } from "../Componets/styles/GlobalStyles";
 
 export const TechStoreHomePage = () => {
@@ -13,7 +12,6 @@ export const TechStoreHomePage = () => {
       <Categories />
       <BestSellers />
       <PromotionalBanner />
-      <Newsletter />
     </Main>
   );
 };

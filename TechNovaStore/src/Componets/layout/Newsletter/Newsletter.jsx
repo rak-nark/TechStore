@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FooterWrapper,
   FooterInner,
@@ -28,17 +29,17 @@ import {
 import { MdPublic, MdShare } from "react-icons/md";
 
 const defaultQuickLinks = [
-  "Product Support",
-  "Order Tracking",
-  "Store Locator",
-  "Returns & Refunds",
+  { label: "Product Support", path: "#" },
+  { label: "Order Tracking", path: "#" },
+  { label: "Browse Catalog", path: "/catalog" },
+  { label: "Returns & Refunds", path: "#" },
 ];
 
 const defaultCompanyLinks = [
-  "About Us",
-  "Careers",
-  "Press Release",
-  "Terms of Service",
+  { label: "About Us", path: "#" },
+  { label: "Careers", path: "#" },
+  { label: "Press Release", path: "#" },
+  { label: "Terms of Service", path: "#" },
 ];
 
 const defaultPayments = [
@@ -75,8 +76,18 @@ export const Newsletter = ({
         <FooterGrid>
           <BrandBlock>
             <BrandHeader>
-              <LogoBox>⚡</LogoBox>
-              <BrandName>TechStore</BrandName>
+              <Link
+                to="/"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                  textDecoration: "none",
+                }}
+              >
+                <LogoBox>⚡</LogoBox>
+                <BrandName>TechStore</BrandName>
+              </Link>
             </BrandHeader>
             <BrandDescription>
               Your one-stop destination for the latest in consumer electronics,
@@ -96,8 +107,10 @@ export const Newsletter = ({
             <ColumnTitle>Quick Links</ColumnTitle>
             <LinkList>
               {quickLinks.map((link) => (
-                <li key={link}>
-                  <LinkItem href="#">{link}</LinkItem>
+                <li key={link.label}>
+                  <LinkItem as={Link} to={link.path}>
+                    {link.label}
+                  </LinkItem>
                 </li>
               ))}
             </LinkList>
@@ -107,8 +120,10 @@ export const Newsletter = ({
             <ColumnTitle>Company</ColumnTitle>
             <LinkList>
               {companyLinks.map((link) => (
-                <li key={link}>
-                  <LinkItem href="#">{link}</LinkItem>
+                <li key={link.label}>
+                  <LinkItem as={Link} to={link.path}>
+                    {link.label}
+                  </LinkItem>
                 </li>
               ))}
             </LinkList>

@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import { GlobalStyles } from "./Componets/styles/GlobalStyles";
 import Header from "./Componets/layout/Header/Header";
+import Newsletter from "./Componets/layout/Newsletter/Newsletter";
 import TechStoreHomePage from "./Pages/TechStoreHomePage";
+import TechStoreCatalog from "./Pages/TechStoreCatalog";
 import { darkTheme, lightTheme } from "./Componets/styles/themes";
 
 export const App = () => {
@@ -25,8 +28,15 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyles />
-      <Header onToggleTheme={toggleTheme} />
-      <TechStoreHomePage />
+      <Router>
+        <Header onToggleTheme={toggleTheme} />
+        <Routes>
+          <Route path="/" element={<TechStoreHomePage />} />
+          <Route path="/catalog" element={<TechStoreCatalog />} />
+          <Route path="/catalog/:category" element={<TechStoreCatalog />} />
+        </Routes>
+        <Newsletter />
+      </Router>
     </ThemeProvider>
   );
 };
