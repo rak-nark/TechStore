@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   MdFavorite,
   MdAddShoppingCart,
@@ -44,6 +45,7 @@ const CatalogProductCard = ({
   onCompareClick,
   onAddToCart,
 }) => {
+  const navigate = useNavigate();
   const [favorite, setFavorite] = useState(isFavorite);
   const [compared, setCompared] = useState(isCompared);
 
@@ -56,6 +58,12 @@ const CatalogProductCard = ({
     }).format(price);
   };
 
+  const handleCardClick = () => {
+    if (id) {
+      navigate(`/product/${id}`);
+    }
+  };
+
   const handleFavoriteClick = (e) => {
     e.stopPropagation();
     setFavorite(!favorite);
@@ -64,7 +72,8 @@ const CatalogProductCard = ({
     }
   };
 
-  const handleCompareClick = () => {
+  const handleCompareClick = (e) => {
+    e.stopPropagation();
     setCompared(!compared);
     if (onCompareClick) {
       onCompareClick(id);
@@ -90,7 +99,7 @@ const CatalogProductCard = ({
   };
 
   return (
-    <CardContainer $outOfStock={!inStock}>
+    <CardContainer $outOfStock={!inStock} onClick={handleCardClick}>
       <ImageContainer>
         <ProductImage src={image} alt={title} />
 

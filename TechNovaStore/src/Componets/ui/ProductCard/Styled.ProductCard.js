@@ -8,6 +8,7 @@ export const CardContainer = styled.div`
   border: 1px solid
     ${({ theme }) => (theme.mode === "dark" ? "#1e293b" : "#e2e8f0")};
   transition: all 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);

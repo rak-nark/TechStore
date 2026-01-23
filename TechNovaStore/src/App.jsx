@@ -7,6 +7,7 @@ import Header from "./Componets/layout/Header/Header";
 import Newsletter from "./Componets/layout/Newsletter/Newsletter";
 import TechStoreHomePage from "./Pages/TechStoreHomePage";
 import TechStoreCatalog from "./Pages/TechStoreCatalog";
+import TechStoreProductDetail from "./Pages/TechStoreProductDetail";
 import { darkTheme, lightTheme } from "./Componets/styles/themes";
 
 export const App = () => {
@@ -34,6 +35,7 @@ export const App = () => {
           <Route path="/" element={<TechStoreHomePage />} />
           <Route path="/catalog" element={<TechStoreCatalog />} />
           <Route path="/catalog/:category" element={<TechStoreCatalog />} />
+          <Route path="/product/:id" element={<TechStoreProductDetail />} />
         </Routes>
         <Newsletter />
       </Router>

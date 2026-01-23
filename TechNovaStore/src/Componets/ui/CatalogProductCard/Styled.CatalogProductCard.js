@@ -9,6 +9,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   transition: all 0.3s;
+  cursor: pointer;
   opacity: ${({ $outOfStock }) => ($outOfStock ? "0.75" : "1")};
   filter: ${({ $outOfStock }) =>
     $outOfStock ? "grayscale(1)" : "grayscale(0)"};

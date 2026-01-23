@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   CardContainer,
   ImageContainer,
@@ -35,6 +36,7 @@ const formatCOP = (price) => {
 };
 
 export const ProductCard = ({
+  id,
   image,
   badge = null, // { type: 'sale' | 'new', text: 'Sale' | 'New' }
   title,
@@ -46,6 +48,8 @@ export const ProductCard = ({
   onFavoriteClick = () => {},
   onAddToCart = () => {},
 }) => {
+  const navigate = useNavigate();
+
   const renderStars = () => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -67,12 +71,28 @@ export const ProductCard = ({
     return stars;
   };
 
+  const handleCardClick = () => {
+    if (id) {
+      navigate(`/product/${id}`);
+    }
+  };
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    onAddToCart();
+  };
+
+  const handleFavorite = (e) => {
+    e.stopPropagation();
+    onFavoriteClick();
+  };
+
   return (
-    <CardContainer>
+    <CardContainer onClick={handleCardClick}>
       <ImageContainer>
         <ProductImage src={image} alt={title} />
         {badge && <Badge $variant={badge.type}>{badge.text}</Badge>}
-        <FavoriteButton onClick={onFavoriteClick}>
+        <FavoriteButton onClick={handleFavorite}>
           <MdFavorite size={18} />
         </FavoriteButton>
       </ImageContainer>
@@ -91,7 +111,7 @@ export const ProductCard = ({
             <CurrentPrice>{formatCOP(currentPrice)}</CurrentPrice>
             {oldPrice && <OldPrice>{formatCOP(oldPrice)}</OldPrice>}
           </PriceContainer>
-          <AddToCartButton onClick={onAddToCart}>
+          <AddToCartButton onClick={handleAddToCart}>
             <MdAddShoppingCart size={20} />
           </AddToCartButton>
         </PriceSection>
