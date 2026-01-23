@@ -5,6 +5,7 @@ import {
   GlowOverlay,
   CardContainer,
   ContentSection,
+  TextGroup,
   BadgeText,
   MainTitle,
   DescriptionText,
@@ -18,8 +19,8 @@ export const Card = ({
   badge = "New Generation",
   title = "The Future of Computing.",
   description = "Experience the power of the new ProBook X15. Engineered for professionals, designed for the absolute future of performance.",
-  primaryButtonText = "Comprar Ahora",
-  secondaryButtonText = "Leer Más",
+  primaryButtonText = "Shop Now",
+  secondaryButtonText = "Learn More",
   imageSrc = "https://via.placeholder.com/400x400",
   onPrimaryClick = () => {},
   onSecondaryClick = () => {},
@@ -30,11 +31,11 @@ export const Card = ({
         <GlowOverlay />
         <CardContainer>
           <ContentSection>
-            <BadgeText>{badge}</BadgeText>
-
-            <MainTitle>{title}</MainTitle>
-
-            <DescriptionText>{description}</DescriptionText>
+            <TextGroup>
+              <BadgeText>{badge}</BadgeText>
+              <MainTitle>{title}</MainTitle>
+              <DescriptionText>{description}</DescriptionText>
+            </TextGroup>
 
             <ButtonGroup>
               <Button $variant="primary" onClick={onPrimaryClick}>

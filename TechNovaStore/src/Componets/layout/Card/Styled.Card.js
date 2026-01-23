@@ -4,10 +4,10 @@ export const CardWrapper = styled.section`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 48px clamp(16px, 4vw, 80px);
+  padding: 3rem 1rem; /* py-12 px-4 */
 
-  @media (max-width: 768px) {
-    padding: 32px 16px;
+  @media (min-width: 1024px) {
+    padding: 3rem 5rem; /* lg:px-20 */
   }
 `;
 
@@ -15,8 +15,11 @@ export const CardWrapper = styled.section`
 export const CardSurface = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 16px; /* rounded-2xl */
-  background: ${({ theme }) => theme.colors.surface};
+  border-radius: 1rem; /* rounded-2xl */
+  background: ${({ theme }) =>
+    theme.mode === "dark"
+      ? "#192233"
+      : "#0f172a"}; /* dark:bg-[#192233] bg-slate-900 */
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -71,87 +74,69 @@ export const CardContainer = styled.div`
 `;
 
 export const ContentSection = styled.div`
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
-  gap: 32px;
-  padding: 32px;
+  gap: 2rem; /* gap-8 */
+  padding: 2rem; /* p-8 */
 
   @media (min-width: 1024px) {
     width: 50%;
-    padding: 64px; /* lg:p-16 */
-  }
-
-  @media (max-width: 1024px) {
-    padding: 48px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 32px;
+    padding: 4rem; /* lg:p-16 */
   }
 `;
 
-export const BadgeText = styled.p`
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.12em; /* tracking-widest aproximado */
+export const TextGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+`;
+
+export const BadgeText = styled.span`
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+  letter-spacing: 0.1em; /* tracking-widest */
   color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
 `;
 
-export const MainTitle = styled.h2`
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 48px; /* text-5xl base */
+export const MainTitle = styled.h1`
+  font-size: 3rem; /* text-5xl */
   font-weight: 900; /* font-black */
   line-height: 1.1; /* leading-[1.1] */
-  letter-spacing: -0.02em; /* tracking-tight */
-  color: ${({ theme }) => theme.colors.textPrimary};
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: #ffffff; /* text-white */
 
   @media (min-width: 1024px) {
-    font-size: 72px; /* lg:text-7xl */
-  }
-
-  @media (max-width: 768px) {
-    font-size: 36px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 28px;
+    font-size: 4.5rem; /* lg:text-7xl */
   }
 `;
 
 export const DescriptionText = styled.p`
-  font-size: 18px; /* text-lg */
+  font-size: 1.125rem; /* text-lg */
   font-weight: 400;
-  line-height: 1.6;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  max-width: 448px; /* max-w-md */
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
+  line-height: 1.625; /* leading-relaxed */
+  color: #cbd5e1; /* text-slate-300 */
+  max-width: 28rem; /* max-w-md */
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
-  gap: 16px;
-  padding: 32px 0;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  flex-wrap: wrap; /* flex-wrap */
+  gap: 1rem; /* gap-4 */
 `;
 
 export const Button = styled.button`
-  padding: 16px 32px; /* px-8 py-4 */
-  font-size: 16px; /* text-lg */
+  padding: 1rem 2rem; /* px-8 py-4 */
+  font-size: 1.125rem; /* text-lg */
   font-weight: 700; /* font-bold */
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem; /* rounded-lg */
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: "Space Grotesk", sans-serif;
 
   ${({ $variant, theme }) =>
     $variant === "primary"
@@ -160,54 +145,35 @@ export const Button = styled.button`
     color: #ffffff;
 
     &:hover {
-      background-color: #1e52b8;
+      background-color: rgba(43, 108, 238, 0.9); /* hover:bg-primary/90 */
       transform: scale(1.05);
     }
   `
       : `
-    /* Secondary variant: dark vs light theme */
-    ${
-      theme.mode === "light"
-        ? `
-      background-color: ${theme.card.ButtonSecondary || "#e2e8f0"};
-      color: ${theme.colors.textPrimary};
-      border: 1px solid ${theme.card.ButtonSecondary || "#e2e8f0"};
-      
-      &:hover {
-        filter: brightness(0.97);
-        transform: scale(1.03);
-      }
-    `
-        : `
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+    backdrop-filter: blur(4px); /* backdrop-blur-sm */
 
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        transform: scale(1.03);
-      }
-    `
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* hover:bg-white/20 */
     }
   `}
 `;
 
 export const ImageSection = styled.div`
+  position: relative;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: auto;
-  padding: 32px;
+  padding: 2rem; /* p-8 */
 
   @media (min-width: 1024px) {
     width: 50%;
     padding: 0; /* lg:p-0 */
-  }
-
-  @media (max-width: 768px) {
-    padding: 20px;
   }
 `;
 
