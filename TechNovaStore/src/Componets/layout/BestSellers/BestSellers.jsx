@@ -21,8 +21,8 @@ const defaultProducts = [
       "Pure studio quality audio with active noise cancellation technology.",
     rating: 4.5,
     reviewCount: 42,
-    currentPrice: 299.0,
-    oldPrice: 349.0,
+    currentPrice: 1195000,
+    oldPrice: 1395000,
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const defaultProducts = [
       "Ultra-responsive gaming mouse with customizable RGB lighting and weights.",
     rating: 5,
     reviewCount: 128,
-    currentPrice: 89.0,
+    currentPrice: 356000,
     oldPrice: null,
   },
   {
@@ -47,7 +47,7 @@ const defaultProducts = [
       "Titanium design, A17 Pro chip, and the most powerful iPhone camera system.",
     rating: 4,
     reviewCount: 15,
-    currentPrice: 1199.0,
+    currentPrice: 4795000,
     oldPrice: null,
   },
   {
@@ -60,7 +60,7 @@ const defaultProducts = [
       "Monitor your health metrics and stay connected with this premium wearable.",
     rating: 4,
     reviewCount: 89,
-    currentPrice: 349.0,
+    currentPrice: 1395000,
     oldPrice: null,
   },
 ];

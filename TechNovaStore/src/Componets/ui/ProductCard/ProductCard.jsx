@@ -7,7 +7,6 @@ import {
   FavoriteButton,
   ContentSection,
   RatingContainer,
-  StarIcon,
   ReviewCount,
   ProductTitle,
   ProductDescription,
@@ -24,6 +23,16 @@ import {
   MdStarOutline,
   MdAddShoppingCart,
 } from "react-icons/md";
+
+// Format price as Colombian Pesos
+const formatCOP = (price) => {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(price);
+};
 
 export const ProductCard = ({
   image,
@@ -79,8 +88,8 @@ export const ProductCard = ({
 
         <PriceSection>
           <PriceContainer>
-            <CurrentPrice>${currentPrice.toFixed(2)}</CurrentPrice>
-            {oldPrice && <OldPrice>${oldPrice.toFixed(2)}</OldPrice>}
+            <CurrentPrice>{formatCOP(currentPrice)}</CurrentPrice>
+            {oldPrice && <OldPrice>{formatCOP(oldPrice)}</OldPrice>}
           </PriceContainer>
           <AddToCartButton onClick={onAddToCart}>
             <MdAddShoppingCart size={20} />
