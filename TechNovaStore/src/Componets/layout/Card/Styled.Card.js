@@ -17,9 +17,7 @@ export const CardSurface = styled.div`
   overflow: hidden;
   border-radius: 1rem; /* rounded-2xl */
   background: ${({ theme }) =>
-    theme.mode === "dark"
-      ? "#192233"
-      : "#0f172a"}; /* dark:bg-[#192233] bg-slate-900 */
+    theme.mode === "dark" ? "#192233" : "#f1f5f9"}; /* Adapts to theme */
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -108,7 +106,7 @@ export const MainTitle = styled.h1`
   font-weight: 900; /* font-black */
   line-height: 1.1; /* leading-[1.1] */
   letter-spacing: -0.025em; /* tracking-tight */
-  color: #ffffff; /* text-white */
+  color: ${({ theme }) => theme.colors.textPrimary}; /* Adapts to theme */
 
   @media (min-width: 1024px) {
     font-size: 4.5rem; /* lg:text-7xl */
@@ -119,7 +117,7 @@ export const DescriptionText = styled.p`
   font-size: 1.125rem; /* text-lg */
   font-weight: 400;
   line-height: 1.625; /* leading-relaxed */
-  color: #cbd5e1; /* text-slate-300 */
+  color: ${({ theme }) => theme.colors.textSecondary}; /* Adapts to theme */
   max-width: 28rem; /* max-w-md */
 `;
 
@@ -149,7 +147,17 @@ export const Button = styled.button`
       transform: scale(1.05);
     }
   `
-      : `
+      : theme.mode === "light"
+        ? `
+    background-color: #ffffff;
+    color: ${theme.colors.textPrimary};
+    border: 1px solid #e2e8f0;
+
+    &:hover {
+      background-color: #f8fafc;
+    }
+  `
+        : `
     background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
