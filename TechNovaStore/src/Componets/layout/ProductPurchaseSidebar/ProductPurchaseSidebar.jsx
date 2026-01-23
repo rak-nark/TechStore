@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   MdStar,
   MdStarHalf,
@@ -49,6 +50,7 @@ const ProductPurchaseSidebar = ({
   const [selectedStorage, setSelectedStorage] = useState(
     storageOptions[1]?.value || null,
   );
+  const navigate = useNavigate();
 
   const formatCOP = (amount) => {
     return new Intl.NumberFormat("es-CO", {
@@ -77,12 +79,14 @@ const ProductPurchaseSidebar = ({
     if (onBuyNow) {
       onBuyNow({ color: selectedColor, storage: selectedStorage });
     }
+    navigate("/cart");
   };
 
   const handleAddToCart = () => {
     if (onAddToCart) {
       onAddToCart({ color: selectedColor, storage: selectedStorage });
     }
+    navigate("/cart");
   };
 
   return (

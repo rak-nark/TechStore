@@ -17,7 +17,7 @@ export const CardContainer = styled.div`
 
 export const ImageContainer = styled.div`
   position: relative;
-  height: 16rem; /* h-64 */
+  height: 16rem;
   overflow: hidden;
   background-color: ${({ theme }) =>
     theme.mode === "dark" ? "#1e293b" : "#f8fafc"};
@@ -41,7 +41,7 @@ export const Badge = styled.span`
   background-color: ${({ $variant }) =>
     $variant === "sale" ? "#ef4444" : "#2b6cee"};
   color: #ffffff;
-  font-size: 0.625rem; /* text-[10px] */
+  font-size: 0.625rem;
   font-weight: 700;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
@@ -88,7 +88,7 @@ export const RatingContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: #eab308; /* yellow-500 */
+  color: #eab308;
 `;
 
 export const StarIcon = styled.span`

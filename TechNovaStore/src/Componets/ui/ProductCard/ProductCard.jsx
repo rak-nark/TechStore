@@ -25,7 +25,6 @@ import {
   MdAddShoppingCart,
 } from "react-icons/md";
 
-// Format price as Colombian Pesos
 const formatCOP = (price) => {
   return new Intl.NumberFormat("es-CO", {
     style: "currency",

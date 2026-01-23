@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const BestSellersSection = styled.section`
   max-width: 1280px;
   margin: 0 auto;
-  padding: 4rem 1rem; /* py-16 px-4 */
+  padding: 4rem 1rem;
   background-color: ${({ theme }) =>
     theme.mode === "dark" ? "rgba(18, 25, 38, 0.5)" : "#f1f5f9"};
 
   @media (min-width: 1024px) {
-    padding: 4rem 5rem; /* lg:px-20 */
+    padding: 4rem 5rem;
   }
 `;
 
@@ -20,7 +20,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 1.875rem; /* text-3xl */
+  font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.025em;
   color: ${({ theme }) => theme.colors.textPrimary};

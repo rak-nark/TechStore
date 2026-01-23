@@ -4,20 +4,18 @@ export const CardWrapper = styled.section`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 3rem 1rem; /* py-12 px-4 */
+  padding: 3rem 1rem;
 
   @media (min-width: 1024px) {
-    padding: 3rem 5rem; /* lg:px-20 */
+    padding: 3rem 5rem;
   }
 `;
 
-// Contenedor superior que controla el fondo y el estilo de la tarjeta
 export const CardSurface = styled.div`
   position: relative;
   overflow: hidden;
-  border-radius: 1rem; /* rounded-2xl */
-  background: ${({ theme }) =>
-    theme.mode === "dark" ? "#192233" : "#f1f5f9"}; /* Adapts to theme */
+  border-radius: 1rem;
+  background: ${({ theme }) => (theme.mode === "dark" ? "#192233" : "#f1f5f9")};
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -28,7 +26,6 @@ export const CardSurface = styled.div`
   }
 `;
 
-// Capa de brillos difuminados como en el diseño de referencia
 export const GlowOverlay = styled.div`
   position: absolute;
   inset: 0;
@@ -40,8 +37,8 @@ export const GlowOverlay = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    width: 384px; /* w-96 */
-    height: 384px; /* h-96 */
+    width: 384px;
+    height: 384px;
     background: ${({ theme }) => theme.colors.primary};
     border-radius: 9999px;
     filter: blur(120px);
@@ -52,9 +49,9 @@ export const GlowOverlay = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 256px; /* w-64 */
-    height: 256px; /* h-64 */
-    background: #7c3aed; /* purple-600 */
+    width: 256px;
+    height: 256px;
+    background: #7c3aed;
     border-radius: 9999px;
     filter: blur(100px);
   }
@@ -78,61 +75,61 @@ export const ContentSection = styled.div`
   flex-direction: column;
   width: 100%;
   height: auto;
-  gap: 2rem; /* gap-8 */
-  padding: 2rem; /* p-8 */
+  gap: 2rem;
+  padding: 2rem;
 
   @media (min-width: 1024px) {
     width: 50%;
-    padding: 4rem; /* lg:p-16 */
+    padding: 4rem;
   }
 `;
 
 export const TextGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* gap-4 */
+  gap: 1rem;
 `;
 
 export const BadgeText = styled.span`
-  font-size: 0.875rem; /* text-sm */
-  font-weight: 700; /* font-bold */
-  letter-spacing: 0.1em; /* tracking-widest */
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
 `;
 
 export const MainTitle = styled.h1`
-  font-size: 3rem; /* text-5xl */
-  font-weight: 900; /* font-black */
-  line-height: 1.1; /* leading-[1.1] */
-  letter-spacing: -0.025em; /* tracking-tight */
-  color: ${({ theme }) => theme.colors.textPrimary}; /* Adapts to theme */
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: ${({ theme }) => theme.colors.textPrimary};
 
   @media (min-width: 1024px) {
-    font-size: 4.5rem; /* lg:text-7xl */
+    font-size: 4.5rem;
   }
 `;
 
 export const DescriptionText = styled.p`
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.625; /* leading-relaxed */
-  color: ${({ theme }) => theme.colors.textSecondary}; /* Adapts to theme */
-  max-width: 28rem; /* max-w-md */
+  line-height: 1.625;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  max-width: 28rem;
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
-  flex-wrap: wrap; /* flex-wrap */
-  gap: 1rem; /* gap-4 */
+  flex-wrap: wrap;
+  gap: 1rem;
 `;
 
 export const Button = styled.button`
-  padding: 1rem 2rem; /* px-8 py-4 */
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 700; /* font-bold */
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 700;
   border: none;
-  border-radius: 0.5rem; /* rounded-lg */
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -143,7 +140,7 @@ export const Button = styled.button`
     color: #ffffff;
 
     &:hover {
-      background-color: rgba(43, 108, 238, 0.9); /* hover:bg-primary/90 */
+      background-color: rgba(43, 108, 238, 0.9);
       transform: scale(1.05);
     }
   `
@@ -158,13 +155,13 @@ export const Button = styled.button`
     }
   `
         : `
-    background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+    background-color: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
-    backdrop-filter: blur(4px); /* backdrop-blur-sm */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.2); /* hover:bg-white/20 */
+      background-color: rgba(255, 255, 255, 0.2);
     }
   `}
 `;
@@ -177,17 +174,17 @@ export const ImageSection = styled.div`
   justify-content: center;
   width: 100%;
   height: auto;
-  padding: 2rem; /* p-8 */
+  padding: 2rem;
 
   @media (min-width: 1024px) {
     width: 50%;
-    padding: 0; /* lg:p-0 */
+    padding: 0;
   }
 `;
 
 export const CardImage = styled.img`
   width: 100%;
-  max-width: 500px; /* max-w-[500px] */
+  max-width: 500px;
   height: auto;
   display: block;
   filter: drop-shadow(0 20px 50px rgba(43, 108, 238, 0.3));

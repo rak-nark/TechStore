@@ -14,7 +14,6 @@ import {
 const ProductGallery = ({ images = [], videoUrl = null }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Default images if none provided
   const defaultImages = [
     "https://lh3.googleusercontent.com/aida-public/AB6AXuAzAN0JNxOz3xiYyCB6R5lJBh-RV1dabMrbWWu3asqj2NUFg0dFej2uq7Uy7fuRs11yg-cYDN5Sw_g17zttOi_kj_FdBRkddW2CrGGjMsGAolN3ji0YCuvWMpIqS1VYrpLPPZbs6-phIaV1F3S66h9MvYy7mzJusG99NRJwNU2mB9FcPmZPWjkjPXL_Kmpyrs-RYXSlr7P5que9WV9YB_BVdV8tTvC7SwwDTwwTDaB1ZgCyGyaTIS3Q9wrHS6zNMo1l9s_zUrgJBzj9",
     "https://lh3.googleusercontent.com/aida-public/AB6AXuAmjOQfKu-snLFo_MGL32CVPi_7Vg9MD8Xz8jcMKHOiFqZMHoQV1_811aHtsQqhJ2zlwL_uwerk0OpRaFzw2xJFd_Ko9jWHSTy0FojpUXfrOFPPf4ha3wezcUCm1sL0lj2yHHrIZo7HKws0AVM5MuWuFULYlBh1X40XuaDutcvDzUwyenCn9_K4HYIPFQ6RQ7cbjfY_X9DM2Jix22lxZgED6wd3_G6Vc4371sjHLYSmTuoYWq4CJT004djEFKtylU8_9Wm-kKoVs43M",
