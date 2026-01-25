@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
 import FilterSidebar from "../Componets/layout/FilterSidebar/FilterSidebar";
 import CatalogProductCard from "../Componets/ui/CatalogProductCard/CatalogProductCard";
@@ -15,6 +16,7 @@ import {
 } from "./Styled.TechStoreCatalog";
 
 const TechStoreCatalog = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState("newest");
 
@@ -149,7 +151,7 @@ const TechStoreCatalog = () => {
                 key={product.id}
                 {...product}
                 onFavoriteClick={(id) => console.log("Favorite:", id)}
-                onCompareClick={(id) => console.log("Compare:", id)}
+                onCompareClick={() => navigate("/compare")}
                 onAddToCart={(id) => console.log("Add to cart:", id)}
               />
             ))}

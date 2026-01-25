@@ -9,6 +9,8 @@ import TechStoreHomePage from "./Pages/TechStoreHomePage";
 import TechStoreCatalog from "./Pages/TechStoreCatalog";
 import TechStoreProductDetail from "./Pages/TechStoreProductDetail";
 import TechStoreCardSummary from "./Pages/TechStoreCardSummary";
+import TechStoreUserAccountDashboard from "./Pages/TechStoreUserAccountDashboard";
+import TechStoreCompare from "./Pages/TechStoreCompare";
 import { darkTheme, lightTheme } from "./Componets/styles/themes";
 
 export const App = () => {
@@ -31,13 +33,70 @@ export const App = () => {
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Router>
-        <Header onToggleTheme={toggleTheme} />
         <Routes>
-          <Route path="/" element={<TechStoreHomePage />} />
-          <Route path="/catalog" element={<TechStoreCatalog />} />
-          <Route path="/catalog/:category" element={<TechStoreCatalog />} />
-          <Route path="/product/:id" element={<TechStoreProductDetail />} />
-          <Route path="/cart" element={<TechStoreCardSummary />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreHomePage />
+              </>
+            }
+          />
+          <Route
+            path="/catalog"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreCatalog />
+              </>
+            }
+          />
+          <Route
+            path="/catalog/:category"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreCatalog />
+              </>
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreProductDetail />
+              </>
+            }
+          />
+          <Route
+            path="/compare"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreCompare />
+              </>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreCardSummary />
+              </>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreUserAccountDashboard />
+              </>
+            }
+          />
         </Routes>
         <Newsletter />
       </Router>

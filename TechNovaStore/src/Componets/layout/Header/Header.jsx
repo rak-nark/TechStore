@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   HeaderWrapper,
   HeaderContainer,
@@ -25,6 +25,7 @@ export default function Header({
   navItems = ["Laptops", "Phones", "Audio", "Accessories"],
   onToggleTheme,
 }) {
+  const navigate = useNavigate();
   const theme = useTheme();
 
   const isDark = theme.colors.background === "#101622";
@@ -74,7 +75,7 @@ export default function Header({
           <ActionIcon onClick={onToggleTheme}>
             {isDark ? <MdLightMode size={20} /> : <MdDarkMode size={20} />}
           </ActionIcon>
-          <ActionIcon>
+          <ActionIcon onClick={() => navigate("/cart")}>
             <MdShoppingCart size={20} />
           </ActionIcon>
 
@@ -82,7 +83,7 @@ export default function Header({
             <IoMdHeart size={20} />
           </ActionIcon>
 
-          <ActionIcon>
+          <ActionIcon onClick={() => navigate("/account")}>
             <MdPerson size={20} />
           </ActionIcon>
         </ActionSection>
