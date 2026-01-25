@@ -5,7 +5,6 @@ import CartItem from "../Componets/ui/CartItem/CartItem";
 import CartSummary from "../Componets/layout/SummaryCard/CartSummary/CartSummary";
 import RecommendedProducts from "../Componets/layout/SummaryCard/RecommendedProducts/RecommendedProducts";
 import {
-  CartContainer,
   CartHeader,
   CartTitle,
   ItemCount,
