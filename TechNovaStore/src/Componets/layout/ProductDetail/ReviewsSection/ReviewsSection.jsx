@@ -1,6 +1,6 @@
 import React from "react";
 import { MdStar, MdStarHalf, MdKeyboardArrowRight } from "react-icons/md";
-import ProductReviewCard from "../../ui/ProductReviewCard/ProductReviewCard";
+import ProductReviewCard from "../../../ui/ProductReviewCard/ProductReviewCard";
 import {
   ReviewsContainer,
   ReviewsHeader,

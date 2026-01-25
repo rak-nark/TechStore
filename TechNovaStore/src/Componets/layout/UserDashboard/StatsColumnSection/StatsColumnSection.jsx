@@ -5,7 +5,7 @@ import {
   StatIcon,
   StatValue,
   StatLabel,
-} from "../../../Pages/Styled.TechStoreUserAccountDashboard";
+} from "./Styled.StatsColumnSection";
 
 const StatsColumnSection = ({ stats }) => {
   return (

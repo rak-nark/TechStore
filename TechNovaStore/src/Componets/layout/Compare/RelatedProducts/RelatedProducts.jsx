@@ -5,8 +5,8 @@ import {
   RelatedTitle,
   RelatedLink,
   RelatedGrid,
-} from "../../../Pages/Styled.TechStoreCompare";
-import RelatedProductCard from "../../ui/Compare/RelatedProductCard";
+} from "./Styled.RelatedProducts";
+import RelatedProductCard from "../../../ui/Compare/RelatedProductCard/RelatedProductCard";
 import { MdArrowForward } from "react-icons/md";
 
 const RelatedProducts = ({ items, onAdd }) => {

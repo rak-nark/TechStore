@@ -9,12 +9,11 @@ import {
   ToggleControl,
   ToggleLabel,
   Switch,
-  ProductCard,
   SectionDivider,
   SectionTitleCell,
-} from "../../../Pages/Styled.TechStoreCompare";
-import CompareProductColumn from "../../ui/Compare/CompareProductColumn";
-import ComparisonRow from "../../ui/Compare/ComparisonRow";
+} from "./Styled.ComparisonTable";
+import CompareProductColumn from "../../../ui/Compare/CompareProductColumn/CompareProductColumn";
+import ComparisonRow from "../../../ui/Compare/ComparisonRow/ComparisonRow";
 
 const ComparisonTable = ({
   products,

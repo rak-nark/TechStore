@@ -7,7 +7,7 @@ import {
   NavButton,
   ProductsGrid,
 } from "./Styled.BestSellers";
-import ProductCard from "../../ui/ProductCard/ProductCard";
+import ProductCard from "../../../ui/ProductCard/ProductCard";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 const defaultProducts = [

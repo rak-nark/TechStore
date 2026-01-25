@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
-import FilterSidebar from "../Componets/layout/FilterSidebar/FilterSidebar";
+import FilterSidebar from "../Componets/layout/Catalog/FilterSidebar/FilterSidebar";
 import CatalogProductCard from "../Componets/ui/CatalogProductCard/CatalogProductCard";
 import Pagination from "../Componets/ui/Pagination/Pagination";
 import {

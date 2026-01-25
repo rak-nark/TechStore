@@ -1,10 +1,10 @@
 import React from "react";
-import Sidebar from "../Componets/layout/Sidebar/Sidebar";
-import PageHeadingSection from "../Componets/layout/UserDashboard/PageHeadingSection";
-import LoyaltySection from "../Componets/layout/UserDashboard/LoyaltySection";
-import StatsColumnSection from "../Componets/layout/UserDashboard/StatsColumnSection";
-import RecentOrdersTable from "../Componets/layout/UserDashboard/RecentOrdersTable";
-import SupportGridSection from "../Componets/layout/UserDashboard/SupportGridSection";
+import Sidebar from "../Componets/layout/UserDashboard/Sidebar/Sidebar";
+import PageHeadingSection from "../Componets/layout/UserDashboard/PageHeadingSection/PageHeadingSection";
+import LoyaltySection from "../Componets/layout/UserDashboard/LoyaltySection/LoyaltySection";
+import StatsColumnSection from "../Componets/layout/UserDashboard/StatsColumnSection/StatsColumnSection";
+import RecentOrdersTable from "../Componets/layout/UserDashboard/RecentOrdersTable/RecentOrdersTable";
+import SupportGridSection from "../Componets/layout/UserDashboard/SupportGridSection/SupportGridSection";
 import {
   DashboardContainer,
   MainContent,

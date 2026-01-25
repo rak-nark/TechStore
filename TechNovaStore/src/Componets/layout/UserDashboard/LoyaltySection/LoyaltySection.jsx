@@ -12,7 +12,7 @@ import {
   ViewRewardsButton,
   LoyaltyImage,
   DecorativeBackground,
-} from "../../../Pages/Styled.TechStoreUserAccountDashboard";
+} from "./Styled.LoyaltySection";
 import { MdDiamond } from "react-icons/md";
 
 const LoyaltySection = ({ loyaltyData }) => {

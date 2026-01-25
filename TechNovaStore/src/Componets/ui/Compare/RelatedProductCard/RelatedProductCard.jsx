@@ -8,7 +8,7 @@ import {
   RelatedFooter,
   RelatedPrice,
   IconButton,
-} from "../../../Pages/Styled.TechStoreCompare";
+} from "./Styled.RelatedProductCard";
 import { MdAdd } from "react-icons/md";
 
 const RelatedProductCard = ({ product, onAdd }) => {

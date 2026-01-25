@@ -15,7 +15,7 @@ import {
   ImageWrapper,
   StatusBadge,
   TrackButton,
-} from "../../../Pages/Styled.TechStoreUserAccountDashboard";
+} from "./Styled.RecentOrdersTable";
 
 const RecentOrdersTable = ({ recentOrders }) => {
   return (

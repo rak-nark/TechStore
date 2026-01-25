@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
 import ProductGallery from "../Componets/ui/ProductGallery/ProductGallery";
-import ProductPurchaseSidebar from "../Componets/layout/ProductPurchaseSidebar/ProductPurchaseSidebar";
-import TechSpecs from "../Componets/layout/TechSpecs/TechSpecs";
-import ComparisonTable from "../Componets/layout/ComparisonTable/ComparisonTable";
-import ReviewsSection from "../Componets/layout/ReviewsSection/ReviewsSection";
+import ProductPurchaseSidebar from "../Componets/layout/ProductDetail/ProductPurchaseSidebar/ProductPurchaseSidebar";
+import TechSpecs from "../Componets/layout/ProductDetail/TechSpecs/TechSpecs";
+import ComparisonTable from "../Componets/layout/ProductDetail/ComparisonTable/ComparisonTable";
+import ReviewsSection from "../Componets/layout/ProductDetail/ReviewsSection/ReviewsSection";
 import {
   DetailContainer,
   HeroSection,

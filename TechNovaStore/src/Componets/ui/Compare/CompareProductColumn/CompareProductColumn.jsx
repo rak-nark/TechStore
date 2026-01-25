@@ -9,7 +9,7 @@ import {
   ProductSubtitle,
   ProductPrice,
   PrimaryButton,
-} from "../../../Pages/Styled.TechStoreCompare";
+} from "./Styled.CompareProductColumn";
 import { MdClose } from "react-icons/md";
 
 const CompareProductColumn = ({ product, onRemove, onAddToCart }) => {

@@ -3,7 +3,7 @@ import {
   PageHeading,
   HeadingContent,
   RegisterButton,
-} from "../../../Pages/Styled.TechStoreUserAccountDashboard";
+} from "./Styled.PageHeadingSection";
 import { MdAddCircle } from "react-icons/md";
 
 const PageHeadingSection = ({ userName }) => {

@@ -1,8 +1,8 @@
 import React from "react";
-import { Card } from "../Componets/layout/Card/Card";
-import Categories from "../Componets/layout/Categories/Categories";
-import BestSellers from "../Componets/layout/BestSellers/BestSellers";
-import PromotionalBanner from "../Componets/layout/PromotionalBanner/PromotionalBanner";
+import { Card } from "../Componets/layout/Home/Card/Card";
+import Categories from "../Componets/layout/Home/Categories/Categories";
+import BestSellers from "../Componets/layout/Home/BestSellers/BestSellers";
+import PromotionalBanner from "../Componets/layout/Home/PromotionalBanner/PromotionalBanner";
 import { Main } from "../Componets/styles/GlobalStyles";
 
 export const TechStoreHomePage = () => {

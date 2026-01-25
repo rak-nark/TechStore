@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  SpecRow,
-  SpecLabelCell,
-  SpecValueCell,
-} from "../../../Pages/Styled.TechStoreCompare";
+import { SpecRow, SpecLabelCell, SpecValueCell } from "./Styled.ComparisonRow";
 
 const ComparisonRow = ({ label, values, showDifferences }) => {
   const allEqual = values.every((v) => v === values[0]);

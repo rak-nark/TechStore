@@ -7,7 +7,7 @@ import {
   SupportTitle,
   SupportDescription,
   SupportLink,
-} from "../../../Pages/Styled.TechStoreUserAccountDashboard";
+} from "./Styled.SupportGridSection";
 import { MdBuildCircle, MdShieldMoon } from "react-icons/md";
 
 const SupportGridSection = () => {

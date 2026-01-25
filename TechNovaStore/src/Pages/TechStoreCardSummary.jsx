@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
 import CartItem from "../Componets/ui/CartItem/CartItem";
-import CartSummary from "../Componets/layout/CartSummary/CartSummary";
-import RecommendedProducts from "../Componets/layout/RecommendedProducts/RecommendedProducts";
+import CartSummary from "../Componets/layout/SummaryCard/CartSummary/CartSummary";
+import RecommendedProducts from "../Componets/layout/SummaryCard/RecommendedProducts/RecommendedProducts";
 import {
   CartContainer,
   CartHeader,
