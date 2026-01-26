@@ -11,6 +11,7 @@ import TechStoreProductDetail from "./Pages/TechStoreProductDetail";
 import TechStoreCardSummary from "./Pages/TechStoreCardSummary";
 import TechStoreUserAccountDashboard from "./Pages/TechStoreUserAccountDashboard";
 import TechStoreCompare from "./Pages/TechStoreCompare";
+import TechStoreWishlist from "./Pages/TechStoreWishlist";
 import { darkTheme, lightTheme } from "./Componets/theme/themes";
 
 export const App = () => {
@@ -94,6 +95,15 @@ export const App = () => {
               <>
                 <Header onToggleTheme={toggleTheme} />
                 <TechStoreUserAccountDashboard />
+              </>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreWishlist />
               </>
             }
           />

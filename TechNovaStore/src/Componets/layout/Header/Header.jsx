@@ -79,7 +79,7 @@ export default function Header({
             <MdShoppingCart size={20} />
           </ActionIcon>
 
-          <ActionIcon>
+          <ActionIcon onClick={() => navigate("/wishlist")}>
             <IoMdHeart size={20} />
           </ActionIcon>
 
