@@ -15,12 +15,12 @@ import {
   GhostButton,
   PrimaryGhostButton,
 } from "./Styled.TechStoreCompare";
-import ComparisonTable from "../Componets/layout/Compare/ComparisonTable/ComparisonTable";
-import RelatedProducts from "../Componets/layout/Compare/RelatedProducts/RelatedProducts";
+import ComparisonTable from "../../Componets/layout/Compare/ComparisonTable/ComparisonTable";
+import RelatedProducts from "../../Componets/layout/Compare/RelatedProducts/RelatedProducts";
 import {
   compareProducts,
   relatedProducts,
-} from "../Data/compare";
+} from "../../Data/compare";
 import { MdShare, MdContentCopy } from "react-icons/md";
 
 const TechStoreCompare = () => {

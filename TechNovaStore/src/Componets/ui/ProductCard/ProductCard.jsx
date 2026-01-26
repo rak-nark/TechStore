@@ -24,6 +24,7 @@ import {
   MdStarOutline,
   MdAddShoppingCart,
 } from "react-icons/md";
+import { useProductCardLogic } from "./useProductCardLogic";
 
 const formatCOP = (price) => {
   return new Intl.NumberFormat("es-CO", {
@@ -37,7 +38,7 @@ const formatCOP = (price) => {
 export const ProductCard = ({
   id,
   image,
-  badge = null, // { type: 'sale' | 'new', text: 'Sale' | 'New' }
+  badge = null,
   title,
   description,
   rating = 0,
@@ -49,10 +50,27 @@ export const ProductCard = ({
 }) => {
   const navigate = useNavigate();
 
-  const renderStars = () => {
+  const { getStarData, handleAddToCart, handleFavorite } = useProductCardLogic({
+    id,
+    title,
+    image,
+    description,
+    currentPrice,
+    rating,
+    reviewCount,
+    onFavoriteClick,
+    onAddToCart,
+  });
+
+  const handleCardClick = () => {
+    if (id) {
+      navigate(`/product/${id}`);
+    }
+  };
+
+  const renderStarsDisplay = () => {
+    const { fullStars, hasHalfStar, emptyStars } = getStarData();
     const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
 
     for (let i = 0; i < fullStars; i++) {
       stars.push(<MdStar key={`full-${i}`} size={16} />);
@@ -62,28 +80,11 @@ export const ProductCard = ({
       stars.push(<MdStarHalf key="half" size={16} />);
     }
 
-    const emptyStars = 5 - Math.ceil(rating);
     for (let i = 0; i < emptyStars; i++) {
       stars.push(<MdStarOutline key={`empty-${i}`} size={16} />);
     }
 
     return stars;
-  };
-
-  const handleCardClick = () => {
-    if (id) {
-      navigate(`/product/${id}`);
-    }
-  };
-
-  const handleAddToCart = (e) => {
-    e.stopPropagation();
-    onAddToCart();
-  };
-
-  const handleFavorite = (e) => {
-    e.stopPropagation();
-    onFavoriteClick();
   };
 
   return (
@@ -98,7 +99,7 @@ export const ProductCard = ({
 
       <ContentSection>
         <RatingContainer>
-          {renderStars()}
+          {renderStarsDisplay()}
           <ReviewCount>({reviewCount})</ReviewCount>
         </RatingContainer>
 

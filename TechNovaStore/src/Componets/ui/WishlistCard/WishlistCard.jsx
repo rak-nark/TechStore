@@ -20,6 +20,7 @@ import {
   StockText,
   AddToCartButton,
 } from "./Styled.WishlistCard";
+import { useWishlistCardLogic } from "./useWishlistCardLogic";
 
 const formatCOP = (price) => {
   return new Intl.NumberFormat("es-CO", {
@@ -46,23 +47,21 @@ const WishlistCard = ({
 }) => {
   const navigate = useNavigate();
 
+  const { handleRemove, handleAddToCart, handleNotify } = useWishlistCardLogic({
+    id,
+    productId,
+    name,
+    price,
+    image,
+    inStock,
+    onRemove,
+    onAddToCart,
+    onNotify,
+  });
+
   const handleCardClick = () => {
     if (productId) {
       navigate(`/product/${productId}`);
-    }
-  };
-
-  const handleRemove = (e) => {
-    e.stopPropagation();
-    if (onRemove) onRemove(id);
-  };
-
-  const handleAction = (e) => {
-    e.stopPropagation();
-    if (inStock && onAddToCart) {
-      onAddToCart(productId);
-    } else if (!inStock && onNotify) {
-      onNotify(productId);
     }
   };
 
@@ -89,7 +88,7 @@ const WishlistCard = ({
         </PriceSection>
 
         <AddToCartButton
-          onClick={handleAction}
+          onClick={inStock ? handleAddToCart : handleNotify}
           disabled={!inStock && !onNotify}
         >
           {inStock ? (

@@ -5,13 +5,13 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
 import Header from "./Componets/layout/Header/Header";
 import Newsletter from "./Componets/layout/Newsletter/Newsletter";
-import TechStoreHomePage from "./Pages/TechStoreHomePage";
-import TechStoreCatalog from "./Pages/TechStoreCatalog";
-import TechStoreProductDetail from "./Pages/TechStoreProductDetail";
-import TechStoreCardSummary from "./Pages/TechStoreCardSummary";
-import TechStoreUserAccountDashboard from "./Pages/TechStoreUserAccountDashboard";
-import TechStoreCompare from "./Pages/TechStoreCompare";
-import TechStoreWishlist from "./Pages/TechStoreWishlist";
+import TechStoreHomePage from "./Pages/TechStoreHomePage/TechStoreHomePage";
+import TechStoreCatalog from "./Pages/TechStoreCatalog/TechStoreCatalog";
+import TechStoreProductDetail from "./Pages/TechStoreProductDetail/TechStoreProductDetail";
+import TechStoreCardSummary from "./Pages/TechStoreCardSummary/TechStoreCardSummary";
+import TechStoreUserAccountDashboard from "./Pages/TechStoreUserAccountDashboard/TechStoreUserAccountDashboard";
+import TechStoreCompare from "./Pages/TechStoreCompare/TechStoreCompare";
+import TechStoreWishlist from "./Pages/TechStoreWishlist/TechStoreWishlist";
 import { darkTheme, lightTheme } from "./Componets/theme/themes";
 
 export const App = () => {

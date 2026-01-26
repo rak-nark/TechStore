@@ -1,10 +1,10 @@
 import React from "react";
-import { Card } from "../Componets/layout/Home/Card/Card";
-import Categories from "../Componets/layout/Home/Categories/Categories";
-import BestSellers from "../Componets/layout/Home/BestSellers/BestSellers";
-import PromotionalBanner from "../Componets/layout/Home/PromotionalBanner/PromotionalBanner";
-import { Main } from "../GlobalStyles";
-import { bestSellers } from "../Data/home";
+import { Card } from "../../Componets/layout/Home/Card/Card";
+import Categories from "../../Componets/layout/Home/Categories/Categories";
+import BestSellers from "../../Componets/layout/Home/BestSellers/BestSellers";
+import PromotionalBanner from "../../Componets/layout/Home/PromotionalBanner/PromotionalBanner";
+import { Main } from "../../GlobalStyles";
+import { bestSellers } from "../../Data/home";
 
 export const TechStoreHomePage = () => {
   return (

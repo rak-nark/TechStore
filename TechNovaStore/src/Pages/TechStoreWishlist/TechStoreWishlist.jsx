@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
-import WishlistHeader from "../Componets/layout/Wishlist/WishlistHeader/WishlistHeader";
-import WishlistSearchBar from "../Componets/layout/Wishlist/WishlistSearchBar/WishlistSearchBar";
-import WishlistGrid from "../Componets/layout/Wishlist/WishlistGrid/WishlistGrid";
-import WishlistFooterCTA from "../Componets/layout/Wishlist/WishlistFooterCTA/WishlistFooterCTA";
-import { wishlistItems } from "../Data/wishlist";
+import Breadcrumbs from "../../Componets/ui/Breadcrumbs/Breadcrumbs";
+import WishlistHeader from "../../Componets/layout/Wishlist/WishlistHeader/WishlistHeader";
+import WishlistSearchBar from "../../Componets/layout/Wishlist/WishlistSearchBar/WishlistSearchBar";
+import WishlistGrid from "../../Componets/layout/Wishlist/WishlistGrid/WishlistGrid";
+import WishlistFooterCTA from "../../Componets/layout/Wishlist/WishlistFooterCTA/WishlistFooterCTA";
+import { wishlistItems } from "../../Data/wishlist";
 import {
   WishlistContainer,
   BreadcrumbsWrapper,

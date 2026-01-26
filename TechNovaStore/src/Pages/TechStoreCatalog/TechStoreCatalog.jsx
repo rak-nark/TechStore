@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
-import FilterSidebar from "../Componets/layout/Catalog/FilterSidebar/FilterSidebar";
-import CatalogProductCard from "../Componets/ui/CatalogProductCard/CatalogProductCard";
-import Pagination from "../Componets/ui/Pagination/Pagination";
+import Breadcrumbs from "../../Componets/ui/Breadcrumbs/Breadcrumbs";
+import FilterSidebar from "../../Componets/layout/Catalog/FilterSidebar/FilterSidebar";
+import CatalogProductCard from "../../Componets/ui/CatalogProductCard/CatalogProductCard";
+import Pagination from "../../Componets/ui/Pagination/Pagination";
 import {
   CatalogContainer,
   CatalogHeader,
@@ -14,7 +14,7 @@ import {
   CatalogContent,
   ProductGrid,
 } from "./Styled.TechStoreCatalog";
-import { catalogProducts } from "../Data/catalog";
+import { catalogProducts } from "../../Data/catalog";
 
 const TechStoreCatalog = () => {
   const navigate = useNavigate();

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
   MdFavorite,
   MdAddShoppingCart,
   MdShoppingCartCheckout,
 } from "react-icons/md";
+import { useCatalogProductCardLogic } from "./useCatalogProductCardLogic";
 import {
   CardContainer,
   ImageContainer,
@@ -46,8 +47,26 @@ const CatalogProductCard = ({
   onAddToCart,
 }) => {
   const navigate = useNavigate();
-  const [favorite, setFavorite] = useState(isFavorite);
-  const [compared, setCompared] = useState(isCompared);
+
+  const {
+    favorite,
+    compared,
+    handleFavoriteClick,
+    handleCompareClick,
+    handleAddToCart,
+  } = useCatalogProductCardLogic({
+    id,
+    title,
+    image,
+    description,
+    currentPrice,
+    inStock,
+    isFavorite,
+    isCompared,
+    onFavoriteClick,
+    onCompareClick,
+    onAddToCart,
+  });
 
   const formatCOP = (price) => {
     return new Intl.NumberFormat("es-CO", {
@@ -61,29 +80,6 @@ const CatalogProductCard = ({
   const handleCardClick = () => {
     if (id) {
       navigate(`/product/${id}`);
-    }
-  };
-
-  const handleFavoriteClick = (e) => {
-    e.stopPropagation();
-    setFavorite(!favorite);
-    if (onFavoriteClick) {
-      onFavoriteClick(id);
-    }
-  };
-
-  const handleCompareClick = (e) => {
-    e.stopPropagation();
-    setCompared(!compared);
-    if (onCompareClick) {
-      onCompareClick(id);
-    }
-  };
-
-  const handleAddToCart = (e) => {
-    e.stopPropagation();
-    if (inStock && onAddToCart) {
-      onAddToCart(id);
     }
   };
 

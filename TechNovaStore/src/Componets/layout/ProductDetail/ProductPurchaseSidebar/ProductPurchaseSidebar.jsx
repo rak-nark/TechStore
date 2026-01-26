@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import {
   MdStar,
   MdStarHalf,
@@ -33,10 +32,14 @@ import {
   InfoIcon,
   InfoText,
 } from "./Styled.ProductPurchaseSidebar";
+import { useProductPurchaseLogic } from "./useProductPurchaseLogic";
 
 const ProductPurchaseSidebar = ({
   badge = "New Release",
   title = "Product Name",
+  productId,
+  image,
+  subtitle,
   rating = 4.8,
   reviewCount = 1240,
   price = 1099,
@@ -46,20 +49,25 @@ const ProductPurchaseSidebar = ({
   onBuyNow,
   onAddToCart,
 }) => {
-  const [selectedColor, setSelectedColor] = useState(colors[0]?.value || null);
-  const [selectedStorage, setSelectedStorage] = useState(
-    storageOptions[1]?.value || null,
-  );
-  const navigate = useNavigate();
-
-  const formatCOP = (amount) => {
-    return new Intl.NumberFormat("es-CO", {
-      style: "currency",
-      currency: "COP",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount);
-  };
+  const {
+    selectedColor,
+    selectedStorage,
+    formatCOP,
+    handleColorSelect,
+    handleStorageSelect,
+    handleBuyNow,
+    handleAddToCart,
+  } = useProductPurchaseLogic({
+    productId,
+    image,
+    subtitle,
+    colors,
+    storageOptions,
+    price,
+    title,
+    onBuyNow,
+    onAddToCart,
+  });
 
   const renderStars = (rating) => {
     const stars = [];
@@ -73,20 +81,6 @@ const ProductPurchaseSidebar = ({
       stars.push(<MdStarHalf key="half" />);
     }
     return stars;
-  };
-
-  const handleBuyNow = () => {
-    if (onBuyNow) {
-      onBuyNow({ color: selectedColor, storage: selectedStorage });
-    }
-    navigate("/cart");
-  };
-
-  const handleAddToCart = () => {
-    if (onAddToCart) {
-      onAddToCart({ color: selectedColor, storage: selectedStorage });
-    }
-    navigate("/cart");
   };
 
   return (
@@ -121,7 +115,7 @@ const ProductPurchaseSidebar = ({
                   key={color.value}
                   $color={color.hex}
                   $active={selectedColor === color.value}
-                  onClick={() => setSelectedColor(color.value)}
+                  onClick={() => handleColorSelect(color.value)}
                   aria-label={color.name}
                 />
               ))}
@@ -137,7 +131,7 @@ const ProductPurchaseSidebar = ({
                 <StorageButton
                   key={option.value}
                   $active={selectedStorage === option.value}
-                  onClick={() => setSelectedStorage(option.value)}
+                  onClick={() => handleStorageSelect(option.value)}
                 >
                   {option.label}
                 </StorageButton>

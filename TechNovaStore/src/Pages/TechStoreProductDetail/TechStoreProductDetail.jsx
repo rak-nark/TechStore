@@ -1,18 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Breadcrumbs from "../Componets/ui/Breadcrumbs/Breadcrumbs";
-import ProductGallery from "../Componets/ui/ProductGallery/ProductGallery";
-import ProductPurchaseSidebar from "../Componets/layout/ProductDetail/ProductPurchaseSidebar/ProductPurchaseSidebar";
-import TechSpecs from "../Componets/layout/ProductDetail/TechSpecs/TechSpecs";
-import ComparisonTable from "../Componets/layout/ProductDetail/ComparisonTable/ComparisonTable";
-import ReviewsSection from "../Componets/layout/ProductDetail/ReviewsSection/ReviewsSection";
+import Breadcrumbs from "../../Componets/ui/Breadcrumbs/Breadcrumbs";
+import ProductGallery from "../../Componets/ui/ProductGallery/ProductGallery";
+import ProductPurchaseSidebar from "../../Componets/layout/ProductDetail/ProductPurchaseSidebar/ProductPurchaseSidebar";
+import TechSpecs from "../../Componets/layout/ProductDetail/TechSpecs/TechSpecs";
+import ComparisonTable from "../../Componets/layout/ProductDetail/ComparisonTable/ComparisonTable";
+import ReviewsSection from "../../Componets/layout/ProductDetail/ReviewsSection/ReviewsSection";
 import {
   DetailContainer,
   HeroSection,
   GalleryColumn,
   SidebarColumn,
 } from "./Styled.TechStoreProductDetail";
-import { PRODUCTS } from "../Data/products";
+import { PRODUCTS } from "../../Data/products";
 
 const TechStoreProductDetail = () => {
   const { id } = useParams();
@@ -47,7 +47,10 @@ const TechStoreProductDetail = () => {
         <SidebarColumn>
           <ProductPurchaseSidebar
             badge={product.badge}
+            productId={product.id}
             title={product.name}
+            subtitle={product.shortDescription}
+            image={product.images?.[0]}
             rating={product.rating}
             reviewCount={product.reviewCount}
             price={product.price}
