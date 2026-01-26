@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import { GlobalStyles } from "./Componets/styles/GlobalStyles";
+import { GlobalStyles } from "./GlobalStyles";
 import Header from "./Componets/layout/Header/Header";
 import Newsletter from "./Componets/layout/Newsletter/Newsletter";
 import TechStoreHomePage from "./Pages/TechStoreHomePage";
@@ -11,7 +11,8 @@ import TechStoreProductDetail from "./Pages/TechStoreProductDetail";
 import TechStoreCardSummary from "./Pages/TechStoreCardSummary";
 import TechStoreUserAccountDashboard from "./Pages/TechStoreUserAccountDashboard";
 import TechStoreCompare from "./Pages/TechStoreCompare";
-import { darkTheme, lightTheme } from "./Componets/styles/themes";
+import TechStoreWishlist from "./Pages/TechStoreWishlist";
+import { darkTheme, lightTheme } from "./Componets/theme/themes";
 
 export const App = () => {
   const [theme, setTheme] = useState("dark");
@@ -94,6 +95,15 @@ export const App = () => {
               <>
                 <Header onToggleTheme={toggleTheme} />
                 <TechStoreUserAccountDashboard />
+              </>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <>
+                <Header onToggleTheme={toggleTheme} />
+                <TechStoreWishlist />
               </>
             }
           />
