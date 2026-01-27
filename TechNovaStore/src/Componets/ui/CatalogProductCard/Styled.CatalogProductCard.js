@@ -142,16 +142,19 @@ export const FavoriteButton = styled.button`
   cursor: pointer;
   transition: all 0.2s;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  opacity: 0;
 
+  ${CardContainer}:hover & {
+    opacity: 1;
+  }
   svg {
     font-size: 1.25rem;
-    color: ${({ $active, theme }) =>
-      $active ? theme.colors.primary : theme.colors.textSecondary};
+    color: #ef4444;
     transition: color 0.2s;
   }
 
   &:hover svg {
-    color: ${({ theme }) => theme.colors.primary};
+    color: #ef4444;
   }
 `;
 

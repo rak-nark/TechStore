@@ -62,11 +62,13 @@ export const FavoriteButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => (theme.mode === "dark" ? "#ffffff" : "#334155")};
+  color: #ef4444;
   border: none;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    color 0.2s ease;
 
   ${CardContainer}:hover & {
     opacity: 1;

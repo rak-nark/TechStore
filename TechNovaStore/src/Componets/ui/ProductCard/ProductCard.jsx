@@ -19,12 +19,14 @@ import {
 } from "./Styled.ProductCard";
 import {
   MdFavorite,
+  MdFavoriteBorder,
   MdStar,
   MdStarHalf,
   MdStarOutline,
   MdAddShoppingCart,
 } from "react-icons/md";
 import { useProductCardLogic } from "./useProductCardLogic";
+import { useFavoriteLogic } from "./useFavoriteLogic";
 
 const formatCOP = (price) => {
   return new Intl.NumberFormat("es-CO", {
@@ -45,6 +47,7 @@ export const ProductCard = ({
   reviewCount = 0,
   currentPrice,
   oldPrice = null,
+  isFavorite = false,
   onFavoriteClick = () => {},
   onAddToCart = () => {},
 }) => {
@@ -60,6 +63,14 @@ export const ProductCard = ({
     reviewCount,
     onFavoriteClick,
     onAddToCart,
+  });
+
+  const { favorite, handleFavoriteClick } = useFavoriteLogic({
+    id,
+    title,
+    image,
+    currentPrice,
+    isFavorite,
   });
 
   const handleCardClick = () => {
@@ -92,8 +103,8 @@ export const ProductCard = ({
       <ImageContainer>
         <ProductImage src={image} alt={title} />
         {badge && <Badge $variant={badge.type}>{badge.text}</Badge>}
-        <FavoriteButton onClick={handleFavorite}>
-          <MdFavorite size={18} />
+        <FavoriteButton onClick={handleFavoriteClick} $active={favorite}>
+          {favorite ? <MdFavorite size={18} /> : <MdFavoriteBorder size={18} />}
         </FavoriteButton>
       </ImageContainer>
 

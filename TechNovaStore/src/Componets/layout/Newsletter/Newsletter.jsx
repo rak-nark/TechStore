@@ -151,7 +151,7 @@ export const Newsletter = ({
 
         <Divider>
           <FooterBottom>
-            <Copyright>© 2024 TechStore Inc. All rights reserved.</Copyright>
+            <Copyright>© 2026 TechStore Inc. All rights reserved.</Copyright>
             <PaymentsRow>
               {payments.map((p) => (
                 <PaymentLogo key={p.alt} src={p.src} alt={p.alt} />

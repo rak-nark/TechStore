@@ -2,10 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
   MdFavorite,
+  MdFavoriteBorder,
   MdAddShoppingCart,
   MdShoppingCartCheckout,
 } from "react-icons/md";
 import { useCatalogProductCardLogic } from "./useCatalogProductCardLogic";
+import { useFavoriteLogic } from "../ProductCard/useFavoriteLogic";
 import {
   CardContainer,
   ImageContainer,
@@ -48,24 +50,27 @@ const CatalogProductCard = ({
 }) => {
   const navigate = useNavigate();
 
-  const {
-    favorite,
-    compared,
-    handleFavoriteClick,
-    handleCompareClick,
-    handleAddToCart,
-  } = useCatalogProductCardLogic({
+  const { compared, handleCompareClick, handleAddToCart } =
+    useCatalogProductCardLogic({
+      id,
+      title,
+      image,
+      description,
+      currentPrice,
+      inStock,
+      isFavorite,
+      isCompared,
+      onFavoriteClick,
+      onCompareClick,
+      onAddToCart,
+    });
+
+  const { favorite, handleFavoriteClick } = useFavoriteLogic({
     id,
     title,
     image,
-    description,
     currentPrice,
-    inStock,
     isFavorite,
-    isCompared,
-    onFavoriteClick,
-    onCompareClick,
-    onAddToCart,
   });
 
   const formatCOP = (price) => {
@@ -116,7 +121,7 @@ const CatalogProductCard = ({
         )}
 
         <FavoriteButton onClick={handleFavoriteClick} $active={favorite}>
-          <MdFavorite />
+          {favorite ? <MdFavorite /> : <MdFavoriteBorder />}
         </FavoriteButton>
       </ImageContainer>
 
