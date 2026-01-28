@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useMemo } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Breadcrumbs from "../../Componets/ui/Breadcrumbs/Breadcrumbs";
 import FilterSidebar from "../../Componets/layout/Catalog/FilterSidebar/FilterSidebar";
 import CatalogProductCard from "../../Componets/ui/CatalogProductCard/CatalogProductCard";
@@ -14,32 +14,60 @@ import {
   CatalogContent,
   ProductGrid,
 } from "./Styled.TechStoreCatalog";
-import { catalogProducts } from "../../Data/catalog";
+import { useCatalogPaginationLogic } from "./useCatalogPaginationLogic";
 
-const TechStoreCatalog = () => {
+// Mapping de URLs a categorías
+const CATEGORY_MAP = {
+  laptops: "Laptops",
+  phones: "Phones",
+  audio: "Audio",
+  accessories: "Accessories",
+};
+
+const CATEGORY_BREADCRUMBS = {
+  Laptops: { label: "Laptops", path: "/catalog/laptops" },
+  Phones: { label: "Phones", path: "/catalog/phones" },
+  Audio: { label: "Audio", path: "/catalog/audio" },
+  Accessories: { label: "Accessories", path: "/catalog/accessories" },
+};
+
+const TechStoreCatalog = ({ productType = "Laptops" }) => {
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [sortBy, setSortBy] = useState("newest");
+  const { category } = useParams();
 
-  const breadcrumbItems = [
-    { label: "Computers", path: "/catalog/computers" },
-    { label: "Laptops", path: "/catalog/laptops" },
-  ];
+  // Determinar la categoría a usar
+  const normalizedCategory = useMemo(() => {
+    if (category) {
+      const mapped = CATEGORY_MAP[category];
+      return mapped || "Laptops";
+    }
+    return productType;
+  }, [category, productType]);
 
-  const products = catalogProducts;
+  const breadcrumbItems = useMemo(() => {
+    const breadcrumb = CATEGORY_BREADCRUMBS[normalizedCategory];
+    return [
+      { label: "Home", path: "/" },
+      breadcrumb || { label: normalizedCategory, path: `/catalog/${category}` },
+    ];
+  }, [normalizedCategory, category]);
+
+  const {
+    currentPage,
+    totalPages,
+    totalItems,
+    productsPage,
+    sortBy,
+    handlePageChange,
+    handleSortChange,
+  } = useCatalogPaginationLogic({
+    productType: normalizedCategory,
+    pageSize: 6,
+  });
 
   const handleFiltersChange = (filters) => {
     console.log("Filters changed:", filters);
     // Aquí se implementaría la lógica de filtrado
-  };
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleSortChange = (e) => {
-    setSortBy(e.target.value);
   };
 
   return (
@@ -48,10 +76,15 @@ const TechStoreCatalog = () => {
         <Breadcrumbs items={breadcrumbItems} />
 
         <SortSection>
-          <ResultsText>Showing 24 of 156 products</ResultsText>
+          <ResultsText>
+            Showing {productsPage.length} of {totalItems} products
+          </ResultsText>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <SortLabel>Sort by:</SortLabel>
-            <SortSelect value={sortBy} onChange={handleSortChange}>
+            <SortSelect
+              value={sortBy}
+              onChange={(e) => handleSortChange(e.target.value)}
+            >
               <option value="newest">Newest Arrivals</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
@@ -66,7 +99,7 @@ const TechStoreCatalog = () => {
 
         <div style={{ flex: 1 }}>
           <ProductGrid>
-            {products.map((product) => (
+            {productsPage.map((product) => (
               <CatalogProductCard
                 key={product.id}
                 {...product}
@@ -79,7 +112,7 @@ const TechStoreCatalog = () => {
 
           <Pagination
             currentPage={currentPage}
-            totalPages={12}
+            totalPages={totalPages}
             onPageChange={handlePageChange}
           />
         </div>

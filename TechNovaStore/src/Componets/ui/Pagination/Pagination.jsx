@@ -16,6 +16,7 @@ const Pagination = ({ currentPage = 1, totalPages = 12, onPageChange }) => {
 
   const renderPageNumbers = () => {
     const pages = [];
+    const pagesSet = new Set();
 
     // Always show first page
     pages.push(
@@ -27,21 +28,25 @@ const Pagination = ({ currentPage = 1, totalPages = 12, onPageChange }) => {
         1
       </PageButton>,
     );
+    pagesSet.add(1);
 
-    // Show second page if current is 1 or 2
-    if (currentPage <= 2 && totalPages >= 2) {
-      pages.push(
-        <PageButton
-          key={2}
-          $active={currentPage === 2}
-          onClick={() => handlePageChange(2)}
-        >
-          2
-        </PageButton>,
-      );
+    
+    if (totalPages >= 2 && currentPage <= 2) {
+      if (!pagesSet.has(2)) {
+        pages.push(
+          <PageButton
+            key={2}
+            $active={currentPage === 2}
+            onClick={() => handlePageChange(2)}
+          >
+            2
+          </PageButton>,
+        );
+        pagesSet.add(2);
+      }
     }
 
-    // Show current page and neighbors if not at start
+    // Show current page and neighbors if not at start or end
     if (currentPage > 2 && currentPage < totalPages - 1) {
       if (currentPage > 3) {
         pages.push(<PageEllipsis key="ellipsis-start">...</PageEllipsis>);
@@ -56,6 +61,7 @@ const Pagination = ({ currentPage = 1, totalPages = 12, onPageChange }) => {
           {currentPage}
         </PageButton>,
       );
+      pagesSet.add(currentPage);
 
       if (currentPage < totalPages - 2) {
         pages.push(<PageEllipsis key="ellipsis-end">...</PageEllipsis>);
@@ -64,7 +70,7 @@ const Pagination = ({ currentPage = 1, totalPages = 12, onPageChange }) => {
 
     // Show last page if we have more than 2 pages
     if (totalPages > 2) {
-      if (currentPage >= totalPages - 1) {
+      if (currentPage >= totalPages - 1 && !pagesSet.has(totalPages - 1)) {
         pages.push(
           <PageButton
             key={totalPages - 1}
@@ -74,17 +80,20 @@ const Pagination = ({ currentPage = 1, totalPages = 12, onPageChange }) => {
             {totalPages - 1}
           </PageButton>,
         );
+        pagesSet.add(totalPages - 1);
       }
 
-      pages.push(
-        <PageButton
-          key={totalPages}
-          $active={currentPage === totalPages}
-          onClick={() => handlePageChange(totalPages)}
-        >
-          {totalPages}
-        </PageButton>,
-      );
+      if (!pagesSet.has(totalPages)) {
+        pages.push(
+          <PageButton
+            key={totalPages}
+            $active={currentPage === totalPages}
+            onClick={() => handlePageChange(totalPages)}
+          >
+            {totalPages}
+          </PageButton>,
+        );
+      }
     }
 
     return pages;
