@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Breadcrumbs from "../../Componets/ui/Breadcrumbs/Breadcrumbs";
 import FilterSidebar from "../../Componets/layout/Catalog/FilterSidebar/FilterSidebar";
@@ -34,6 +34,7 @@ const CATEGORY_BREADCRUMBS = {
 const TechStoreCatalog = ({ productType = "Laptops" }) => {
   const navigate = useNavigate();
   const { category } = useParams();
+  const [appliedFilters, setAppliedFilters] = useState(null);
 
   // Determinar la categoría a usar
   const normalizedCategory = useMemo(() => {
@@ -63,12 +64,15 @@ const TechStoreCatalog = ({ productType = "Laptops" }) => {
   } = useCatalogPaginationLogic({
     productType: normalizedCategory,
     pageSize: 6,
+    appliedFilters: appliedFilters,
   });
 
-  const handleFiltersChange = (filters) => {
-    console.log("Filters changed:", filters);
-    // Aquí se implementaría la lógica de filtrado
-  };
+  const handleFiltersChange = useCallback((filters) => {
+    console.log("Filters applied:", filters);
+    setAppliedFilters(filters);
+    // Reset to page 1 when filters change
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <CatalogContainer>
@@ -95,7 +99,10 @@ const TechStoreCatalog = ({ productType = "Laptops" }) => {
       </CatalogHeader>
 
       <CatalogContent>
-        <FilterSidebar onFiltersChange={handleFiltersChange} />
+        <FilterSidebar
+          currentCategory={normalizedCategory}
+          onFiltersChange={handleFiltersChange}
+        />
 
         <div style={{ flex: 1 }}>
           <ProductGrid>

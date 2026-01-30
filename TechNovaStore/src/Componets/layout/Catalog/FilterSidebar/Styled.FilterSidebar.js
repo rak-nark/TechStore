@@ -169,19 +169,45 @@ export const PriceSliderRange = styled.div`
   border-radius: 9999px;
 `;
 
-export const PriceSliderThumb = styled.div`
+export const PriceSliderThumb = styled.input`
   position: absolute;
-  left: ${({ $position }) => $position}%;
+  left: 0;
   top: -0.375rem;
-  width: 1rem;
+  width: 100%;
   height: 1rem;
-  background: ${({ theme }) => theme.colors.primary};
-  border: 2px solid
-    ${({ theme }) => (theme.mode === "dark" ? "#0f172a" : "#ffffff")};
-  border-radius: 9999px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
   cursor: pointer;
-  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: ${({ $zIndex }) => $zIndex || 5};
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background: ${({ theme }) => theme.colors.primary};
+    border: 2px solid
+      ${({ theme }) => (theme.mode === "dark" ? "#0f172a" : "#ffffff")};
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    pointer-events: all;
+  }
+
+  &::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    background: ${({ theme }) => theme.colors.primary};
+    border: 2px solid
+      ${({ theme }) => (theme.mode === "dark" ? "#0f172a" : "#ffffff")};
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    pointer-events: all;
+  }
 `;
 
 export const PriceValues = styled.div`

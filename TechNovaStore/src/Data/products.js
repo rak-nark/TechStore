@@ -690,7 +690,7 @@ export const PRODUCTS = {
     oldPrice: 5595000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBl7NxJ6QQq2J9MJT2PKXSL8UVVxE7H7F-7YOc_9T5QVFqQlq_W-Y2_dKpyU9XBzvKlXs3MxqXqPxE4sL88lN0BxW7sYMqPHGjN0YlE4gKa0t8J4w",
+      "https://m.media-amazon.com/images/I/51A-Q4eMBxL._AC_SL1000_.jpg"
     ],
     colors: [
       { name: "Titanium Black", value: "black", hex: "#1a1a1a" },
@@ -726,7 +726,7 @@ export const PRODUCTS = {
     price: 3995000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC0dVK6qF_jTm-F4oXYh7XvQ5QVvKfF_AKf4_F4_G5_V6_H7_I8",
+      "https://m.media-amazon.com/images/I/71aTjTMFiJL._AC_SL1500_.jpg"
     ],
     colors: [
       { name: "Obsidian", value: "black", hex: "#000000" },
@@ -763,7 +763,7 @@ export const PRODUCTS = {
     oldPrice: 3295000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_oKlvN5P6QQf_FgHh9H5P8W9XYZ",
+      "https://m.media-amazon.com/images/I/51C2mRZHzAL._AC_SL1111_.jpg"
     ],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
@@ -798,7 +798,7 @@ export const PRODUCTS = {
     price: 3295000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_photography",
+      "https://m.media-amazon.com/images/I/81FpAyMYiBL._AC_SL1500_.jpg"
     ],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
@@ -834,7 +834,7 @@ export const PRODUCTS = {
     price: 3895000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_innovative",
+      "https://m.media-amazon.com/images/I/71PBcNx7UdL._AC_SL1500_.jpg",
     ],
     colors: [
       { name: "Midnight Black", value: "black", hex: "#0a0a0a" },
@@ -867,7 +867,7 @@ export const PRODUCTS = {
     reviewCount: 312,
     price: 4295000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_zeiss"],
+    images: ["https://m.media-amazon.com/images/I/41ZT9sLII3L._AC_SY300_SX300_QL70_FMwebp_.jpg"],
     colors: [
       { name: "Space Black", value: "black", hex: "#1c1c1c" },
       { name: "Lunar White", value: "white", hex: "#f8f8f8" },
@@ -900,7 +900,7 @@ export const PRODUCTS = {
     reviewCount: 234,
     price: 2495000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_motorola"],
+    images: ["https://m.media-amazon.com/images/I/61TE0qpbLQL._AC_SL1000_.jpg"],
     colors: [
       { name: "Charcoal", value: "gray", hex: "#4a4a4a" },
       { name: "Frost", value: "white", hex: "#f0f0f0" },
@@ -934,7 +934,7 @@ export const PRODUCTS = {
     price: 2295000,
     oldPrice: 2595000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_realme"],
+    images: ["https://m.media-amazon.com/images/I/61C0ulfBxRL._AC_SL1200_.jpg"],
     colors: [
       { name: "Phantom Black", value: "black", hex: "#0a0a0a" },
       { name: "Titanium Silver", value: "silver", hex: "#d3d3d3" },
@@ -969,7 +969,7 @@ export const PRODUCTS = {
     reviewCount: 1250,
     price: 1495000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_sony"],
+    images: ["https://m.media-amazon.com/images/I/61BGLYEN-xL._SL1500_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "Silver", value: "silver", hex: "#c0c0c0" },
@@ -998,7 +998,7 @@ export const PRODUCTS = {
     reviewCount: 892,
     price: 1395000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_bose"],
+    images: ["https://m.media-amazon.com/images/I/61ZdqSyNpwL._AC_SL1500_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "Cypress", value: "green", hex: "#3a5a3a" },
@@ -1027,7 +1027,7 @@ export const PRODUCTS = {
     reviewCount: 612,
     price: 1795000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_airpods"],
+    images: ["https://m.media-amazon.com/images/I/41JfdFBHleL._AC_SL1200_.jpg"],
     colors: [
       { name: "Silver", value: "silver", hex: "#c0c0c0" },
       { name: "Space Black", value: "black", hex: "#1a1a1a" },
@@ -1058,7 +1058,7 @@ export const PRODUCTS = {
     price: 1295000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_sennheiser",
+      "https://m.media-amazon.com/images/I/71sLOtsK2UL._AC_SL1500_.jpg",
     ],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
@@ -1089,7 +1089,7 @@ export const PRODUCTS = {
     price: 2495000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_bangoloufsen",
+      "https://m.media-amazon.com/images/I/41A-6XHWKNL._AC_SL1080_.jpg",
     ],
     colors: [
       { name: "Gold", value: "gold", hex: "#daa520" },
@@ -1120,7 +1120,7 @@ export const PRODUCTS = {
     price: 1095000,
     oldPrice: 1295000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_jbl"],
+    images: ["https://m.media-amazon.com/images/I/71YCRaYon4L._AC_SL1500_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "Silver", value: "silver", hex: "#c0c0c0" },
@@ -1149,7 +1149,7 @@ export const PRODUCTS = {
     reviewCount: 623,
     price: 1495000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_beats"],
+    images: ["https://m.media-amazon.com/images/I/51FSf3JMnuL._AC_SL1000_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "Navy", value: "navy", hex: "#000080" },
@@ -1180,7 +1180,7 @@ export const PRODUCTS = {
     price: 1895000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_beyerdynamic",
+      "https://m.media-amazon.com/images/I/81-PY8bkVTL._AC_SL1500_.jpg",
     ],
     colors: [{ name: "Black", value: "black", hex: "#000000" }],
     storageOptions: [],
@@ -1210,7 +1210,7 @@ export const PRODUCTS = {
     price: 595000,
     oldPrice: 795000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_anker"],
+    images: ["https://m.media-amazon.com/images/I/71K65j4IrHL._AC_SL1500_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "White", value: "white", hex: "#ffffff" },
@@ -1239,7 +1239,7 @@ export const PRODUCTS = {
     reviewCount: 1823,
     price: 395000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_baseus"],
+    images: ["https://m.media-amazon.com/images/I/51tHeaYfI3L._AC_SL1500_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "White", value: "white", hex: "#ffffff" },
@@ -1269,7 +1269,7 @@ export const PRODUCTS = {
     reviewCount: 934,
     price: 895000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_belkin"],
+    images: ["https://m.media-amazon.com/images/I/71iTY13rpsL._SL1500_.jpg"],
     colors: [
       { name: "White", value: "white", hex: "#ffffff" },
       { name: "Black", value: "black", hex: "#000000" },
@@ -1299,7 +1299,7 @@ export const PRODUCTS = {
     price: 195000,
     inStock: true,
     images: [
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC_nativeunion",
+      "https://m.media-amazon.com/images/I/71Om3kkqoNL._AC_SL1430_.jpg",
     ],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
@@ -1330,7 +1330,7 @@ export const PRODUCTS = {
     reviewCount: 598,
     price: 295000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_moshi"],
+    images: ["https://m.media-amazon.com/images/I/71+XmJriynL._AC_SL1500_.jpg"],
     colors: [
       { name: "Titanium", value: "gray", hex: "#5a5a5a" },
       { name: "Pearl White", value: "white", hex: "#f0f0f0" },
@@ -1360,7 +1360,7 @@ export const PRODUCTS = {
     price: 195000,
     oldPrice: 295000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_esr"],
+    images: ["https://m.media-amazon.com/images/I/71lHHStGynL._AC_SL1500_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "Clear", value: "clear", hex: "#e8e8e8" },
@@ -1390,7 +1390,7 @@ export const PRODUCTS = {
     reviewCount: 867,
     price: 245000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_laut"],
+    images: ["https://m.media-amazon.com/images/I/61pM8Q+Q88L._AC_SX679_.jpg"],
     colors: [
       { name: "Black", value: "black", hex: "#000000" },
       { name: "Clear", value: "clear", hex: "#e8e8e8" },
@@ -1420,7 +1420,7 @@ export const PRODUCTS = {
     reviewCount: 1923,
     price: 145000,
     inStock: true,
-    images: ["https://lh3.googleusercontent.com/aida-public/AB6AXuC_nillkin"],
+    images: ["https://m.media-amazon.com/images/I/51-Ww7sj7LL._AC_SL1000_.jpg"],
     colors: [
       { name: "Standard", value: "clear", hex: "#e8e8e8" },
       { name: "Privacy", value: "privacy", hex: "#c0c0c0" },
@@ -1442,3 +1442,139 @@ export const PRODUCTS = {
 export const getProductById = (id) => PRODUCTS[id];
 
 export const primaryImageOf = (product) => product?.images?.[0] || null;
+
+// Helper functions for filtering and categorization
+export const getCategoryCount = (category) => {
+  return Object.values(PRODUCTS).filter(
+    (product) => product.category === category
+  ).length;
+};
+
+export const getCategories = () => {
+  const categories = new Set(Object.values(PRODUCTS).map((p) => p.category));
+  return Array.from(categories)
+    .sort()
+    .map((cat) => ({
+      value: cat,
+      label: cat,
+      count: getCategoryCount(cat),
+    }));
+};
+
+export const getBrandsByCategory = (category) => {
+  const brands = new Set(
+    Object.values(PRODUCTS)
+      .filter((product) => product.category === category)
+      .map((product) => product.brand)
+  );
+  return Array.from(brands).sort();
+};
+
+export const getPriceRange = (category = null) => {
+  const products = category
+    ? Object.values(PRODUCTS).filter((p) => p.category === category)
+    : Object.values(PRODUCTS);
+
+  if (products.length === 0) return { min: 0, max: 0 };
+
+  const prices = products.map((p) => p.price || 0);
+  return {
+    min: Math.floor(Math.min(...prices) / 100000) * 100000,
+    max: Math.ceil(Math.max(...prices) / 100000) * 100000,
+  };
+};
+
+export const getStorageOptions = (category) => {
+  const storageSet = new Set();
+  Object.values(PRODUCTS)
+    .filter((product) => product.category === category)
+    .forEach((product) => {
+      if (product.storageOptions) {
+        product.storageOptions.forEach((opt) => {
+          storageSet.add(opt.label);
+        });
+      }
+    });
+  return Array.from(storageSet).sort();
+};
+
+export const getRamOptions = (category) => {
+  // RAM options based on common specs
+  const ramSet = new Set();
+  Object.values(PRODUCTS)
+    .filter((product) => product.category === category)
+    .forEach((product) => {
+      if (product.specs) {
+        product.specs.forEach((spec) => {
+          if (
+            spec.label === "Memory" ||
+            spec.label === "RAM" ||
+            spec.label.includes("Memory")
+          ) {
+            ramSet.add(spec.value);
+          }
+        });
+      }
+    });
+  return Array.from(ramSet).sort();
+};
+
+export const filterProducts = (filters) => {
+  if (!filters || typeof filters !== "object") {
+    return Object.values(PRODUCTS);
+  }
+
+  return Object.values(PRODUCTS).filter((product) => {
+    // Filter by category
+    if (
+      filters.categories &&
+      filters.categories.length > 0 &&
+      !filters.categories.includes(product.category)
+    ) {
+      return false;
+    }
+
+    // Filter by brand
+    if (
+      filters.brands &&
+      filters.brands.length > 0 &&
+      !filters.brands.includes(product.brand)
+    ) {
+      return false;
+    }
+
+    // Filter by price
+    if (filters.priceRange && Array.isArray(filters.priceRange)) {
+      const [minPrice, maxPrice] = filters.priceRange;
+      if (product.price < minPrice || product.price > maxPrice) {
+        return false;
+      }
+    }
+
+    // Filter by storage
+    if (filters.storage && filters.storage.length > 0) {
+      const hasStorage =
+        product.storageOptions &&
+        product.storageOptions.some((opt) =>
+          filters.storage.includes(opt.label)
+        );
+      if (!hasStorage) return false;
+    }
+
+    // Filter by RAM
+    if (filters.ram && filters.ram.length > 0) {
+      const hasRam =
+        product.specs &&
+        product.specs.some(
+          (spec) =>
+            (spec.label === "Memory" ||
+              spec.label === "RAM" ||
+              spec.label.includes("Memory")) &&
+            filters.ram.some((ramFilter) => spec.value.includes(ramFilter))
+        );
+      if (!hasRam) return false;
+    }
+
+    return true;
+  });
+};

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { PRODUCTS, primaryImageOf } from "../../Data/products";
+import { PRODUCTS, primaryImageOf, filterProducts } from "../../Data/products";
 
 const DEFAULT_PAGE_SIZE = 6;
 
@@ -28,16 +28,48 @@ const mapProductToCard = (product) => ({
 export const useCatalogPaginationLogic = ({
   productType = "Laptops",
   pageSize = DEFAULT_PAGE_SIZE,
+  appliedFilters = null,
 } = {}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortBy, setSortBy] = useState("newest");
 
   const filteredProducts = useMemo(() => {
-    const byCategory = Object.values(PRODUCTS).filter(
-      (product) => product.category === productType,
-    );
+    let products;
 
-    const sorted = [...byCategory];
+    // Check if filters are actually applied (not just an empty object)
+    const hasActiveFilters =
+      appliedFilters &&
+      (appliedFilters.categories?.length > 0 ||
+        appliedFilters.brands?.length > 0 ||
+        appliedFilters.ram?.length > 0 ||
+        appliedFilters.storage?.length > 0);
+
+    if (hasActiveFilters) {
+      try {
+        // Ensure we have all required filter properties
+        const safeFilters = {
+          categories: appliedFilters.categories || [],
+          brands: appliedFilters.brands || [],
+          ram: appliedFilters.ram || [],
+          storage: appliedFilters.storage || [],
+          priceRange: appliedFilters.priceRange || [0, 10000000],
+        };
+        products = filterProducts(safeFilters);
+      } catch (error) {
+        console.error("Error applying filters:", error);
+        // Fallback to category filter
+        products = Object.values(PRODUCTS).filter(
+          (product) => product.category === productType,
+        );
+      }
+    } else {
+      // Otherwise, filter by category
+      products = Object.values(PRODUCTS).filter(
+        (product) => product.category === productType,
+      );
+    }
+
+    const sorted = [...products];
 
     switch (sortBy) {
       case "price-low":
@@ -56,7 +88,7 @@ export const useCatalogPaginationLogic = ({
     }
 
     return sorted.map(mapProductToCard);
-  }, [productType, sortBy]);
+  }, [productType, sortBy, appliedFilters]);
 
   const totalItems = filteredProducts.length;
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));

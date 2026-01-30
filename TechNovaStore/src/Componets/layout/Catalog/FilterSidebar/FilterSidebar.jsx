@@ -22,88 +22,61 @@ import {
   PriceValue,
   ApplyButton,
 } from "./Styled.FilterSidebar";
+import { useFilterSidebarLogic } from "./useFilterSidebarLogic";
 
-const FilterSidebar = ({ onFiltersChange }) => {
-  const [openSections, setOpenSections] = useState({
-    category: true,
-    brand: true,
-    ram: false,
-    storage: false,
-  });
+const FilterSidebar = ({ currentCategory = null, onFiltersChange }) => {
+  const {
+    filters,
+    openSections,
+    categories,
+    brands,
+    storageOptions,
+    ramOptions,
+    priceRange,
+    toggleSection,
+    handleCheckboxChange,
+    handlePriceChange,
+    handleReset,
+    getActiveFiltersCount,
+  } = useFilterSidebarLogic(currentCategory);
 
-  const [filters, setFilters] = useState({
-    categories: ["Laptops"],
-    brands: [],
-    ram: [],
-    storage: [],
-    priceRange: [0, 2500],
-  });
-
-  const toggleSection = (section) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
-  };
-
-  const handleCheckboxChange = (filterType, value) => {
-    setFilters((prev) => {
-      const currentValues = prev[filterType];
-      const newValues = currentValues.includes(value)
-        ? currentValues.filter((v) => v !== value)
-        : [...currentValues, value];
-
-      return { ...prev, [filterType]: newValues };
-    });
-  };
-
-  const handleReset = () => {
-    setFilters({
-      categories: [],
-      brands: [],
-      ram: [],
-      storage: [],
-      priceRange: [0, 2500],
-    });
-  };
+  const [localPriceRange, setLocalPriceRange] = useState(priceRange);
 
   const handleApplyFilters = () => {
     if (onFiltersChange) {
-      onFiltersChange(filters);
+      onFiltersChange({
+        ...filters,
+        priceRange: localPriceRange,
+      });
     }
   };
 
-  const categories = [
-    { value: "Laptops", label: "Laptops", count: 48 },
-    { value: "Smartphones", label: "Smartphones", count: 32 },
-    { value: "Tablets", label: "Tablets", count: 18 },
-  ];
+  const handlePriceSliderChange = (index, value) => {
+    const newRange = [...localPriceRange];
+    newRange[index] = value;
+    setLocalPriceRange(newRange);
+  };
 
-  const brands = [
-    { value: "Apple", label: "Apple" },
-    { value: "Dell", label: "Dell" },
-    { value: "Razer", label: "Razer" },
-    { value: "ASUS ROG", label: "ASUS ROG" },
-  ];
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("es-CO", {
+      style: "currency",
+      currency: "COP",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
 
-  const ramOptions = [
-    { value: "8GB", label: "8GB" },
-    { value: "16GB", label: "16GB" },
-    { value: "32GB+", label: "32GB+" },
-  ];
-
-  const storageOptions = [
-    { value: "512GB SSD", label: "512GB SSD" },
-    { value: "1TB SSD", label: "1TB SSD" },
-    { value: "2TB+ SSD", label: "2TB+ SSD" },
-  ];
+  const calculatePercentage = (value, min, max) => {
+    return ((value - min) / (max - min)) * 100;
+  };
 
   return (
     <Sidebar>
       <SidebarHeader>
         <SidebarTitle>
           <MdFilterList />
-          Filters
+          Filters{" "}
+          {getActiveFiltersCount() > 0 && `(${getActiveFiltersCount()})`}
         </SidebarTitle>
         <ResetButton onClick={handleReset}>Reset All</ResetButton>
       </SidebarHeader>
@@ -132,82 +105,125 @@ const FilterSidebar = ({ onFiltersChange }) => {
         </FilterAccordion>
 
         {/* Price Range */}
-        <PriceRangeSection>
-          <PriceRangeTitle>Price Range</PriceRangeTitle>
-          <PriceSliderContainer>
-            <PriceSliderTrack>
-              <PriceSliderRange $start={0} $end={75} />
-              <PriceSliderThumb $position={0} />
-              <PriceSliderThumb $position={75} />
-            </PriceSliderTrack>
-            <PriceValues>
-              <PriceValue>$0</PriceValue>
-              <PriceValue>$2,500</PriceValue>
-            </PriceValues>
-          </PriceSliderContainer>
-        </PriceRangeSection>
+        {priceRange.max > 0 && (
+          <PriceRangeSection>
+            <PriceRangeTitle>Price Range</PriceRangeTitle>
+            <PriceSliderContainer>
+              <PriceSliderTrack>
+                <PriceSliderRange
+                  $start={calculatePercentage(
+                    localPriceRange[0],
+                    priceRange.min,
+                    priceRange.max,
+                  )}
+                  $end={calculatePercentage(
+                    localPriceRange[1],
+                    priceRange.min,
+                    priceRange.max,
+                  )}
+                />
+                <PriceSliderThumb
+                  type="range"
+                  min={priceRange.min}
+                  max={priceRange.max}
+                  value={localPriceRange[0]}
+                  onChange={(e) =>
+                    handlePriceSliderChange(0, parseInt(e.target.value))
+                  }
+                  $position={calculatePercentage(
+                    localPriceRange[0],
+                    priceRange.min,
+                    priceRange.max,
+                  )}
+                />
+                <PriceSliderThumb
+                  type="range"
+                  min={priceRange.min}
+                  max={priceRange.max}
+                  value={localPriceRange[1]}
+                  onChange={(e) =>
+                    handlePriceSliderChange(1, parseInt(e.target.value))
+                  }
+                  $position={calculatePercentage(
+                    localPriceRange[1],
+                    priceRange.min,
+                    priceRange.max,
+                  )}
+                />
+              </PriceSliderTrack>
+              <PriceValues>
+                <PriceValue>{formatPrice(localPriceRange[0])}</PriceValue>
+                <PriceValue>{formatPrice(localPriceRange[1])}</PriceValue>
+              </PriceValues>
+            </PriceSliderContainer>
+          </PriceRangeSection>
+        )}
 
         {/* Brand Filter */}
-        <FilterAccordion $open={openSections.brand}>
-          <FilterAccordionSummary onClick={() => toggleSection("brand")}>
-            <span>Brand</span>
-            <MdExpandMore />
-          </FilterAccordionSummary>
-          <FilterAccordionContent>
-            {brands.map((brand) => (
-              <FilterLabel key={brand.value}>
-                <FilterCheckbox
-                  type="checkbox"
-                  checked={filters.brands.includes(brand.value)}
-                  onChange={() => handleCheckboxChange("brands", brand.value)}
-                />
-                <FilterText>{brand.label}</FilterText>
-              </FilterLabel>
-            ))}
-          </FilterAccordionContent>
-        </FilterAccordion>
+        {brands.length > 0 && (
+          <FilterAccordion $open={openSections.brand}>
+            <FilterAccordionSummary onClick={() => toggleSection("brand")}>
+              <span>Brand</span>
+              <MdExpandMore />
+            </FilterAccordionSummary>
+            <FilterAccordionContent>
+              {brands.map((brand) => (
+                <FilterLabel key={brand}>
+                  <FilterCheckbox
+                    type="checkbox"
+                    checked={filters.brands.includes(brand)}
+                    onChange={() => handleCheckboxChange("brands", brand)}
+                  />
+                  <FilterText>{brand}</FilterText>
+                </FilterLabel>
+              ))}
+            </FilterAccordionContent>
+          </FilterAccordion>
+        )}
 
         {/* RAM Filter */}
-        <FilterAccordion $open={openSections.ram}>
-          <FilterAccordionSummary onClick={() => toggleSection("ram")}>
-            <span>Memory (RAM)</span>
-            <MdExpandMore />
-          </FilterAccordionSummary>
-          <FilterAccordionContent>
-            {ramOptions.map((ram) => (
-              <FilterLabel key={ram.value}>
-                <FilterCheckbox
-                  type="checkbox"
-                  checked={filters.ram.includes(ram.value)}
-                  onChange={() => handleCheckboxChange("ram", ram.value)}
-                />
-                <FilterText>{ram.label}</FilterText>
-              </FilterLabel>
-            ))}
-          </FilterAccordionContent>
-        </FilterAccordion>
+        {ramOptions.length > 0 && (
+          <FilterAccordion $open={openSections.ram}>
+            <FilterAccordionSummary onClick={() => toggleSection("ram")}>
+              <span>Memory (RAM)</span>
+              <MdExpandMore />
+            </FilterAccordionSummary>
+            <FilterAccordionContent>
+              {ramOptions.map((ram) => (
+                <FilterLabel key={ram}>
+                  <FilterCheckbox
+                    type="checkbox"
+                    checked={filters.ram.includes(ram)}
+                    onChange={() => handleCheckboxChange("ram", ram)}
+                  />
+                  <FilterText>{ram}</FilterText>
+                </FilterLabel>
+              ))}
+            </FilterAccordionContent>
+          </FilterAccordion>
+        )}
 
         {/* Storage Filter */}
-        <FilterAccordion $open={openSections.storage}>
-          <FilterAccordionSummary onClick={() => toggleSection("storage")}>
-            <span>Storage</span>
-            <MdExpandMore />
-          </FilterAccordionSummary>
-          <FilterAccordionContent>
-            {storageOptions.map((storage) => (
-              <FilterLabel key={storage.value}>
-                <FilterCheckbox
-                  type="checkbox"
-                  checked={filters.storage.includes(storage.value)}
-                  onChange={() =>
-                    handleCheckboxChange("storage", storage.value)
-                  }
-                />
-                <FilterText>{storage.label}</FilterText>
-              </FilterLabel>
-            ))}
-          </FilterAccordionContent>
-        </FilterAccordion>
+        {storageOptions.length > 0 && (
+          <FilterAccordion $open={openSections.storage}>
+            <FilterAccordionSummary onClick={() => toggleSection("storage")}>
+              <span>Storage</span>
+              <MdExpandMore />
+            </FilterAccordionSummary>
+            <FilterAccordionContent>
+              {storageOptions.map((storage) => (
+                <FilterLabel key={storage}>
+                  <FilterCheckbox
+                    type="checkbox"
+                    checked={filters.storage.includes(storage)}
+                    onChange={() => handleCheckboxChange("storage", storage)}
+                  />
+                  <FilterText>{storage}</FilterText>
+                </FilterLabel>
+              ))}
+            </FilterAccordionContent>
+          </FilterAccordion>
+        )}
       </FilterSection>
 
       <ApplyButton onClick={handleApplyFilters}>Apply Filters</ApplyButton>
